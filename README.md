@@ -21,4 +21,5 @@ iOS project engineering , components in swift
         bundle exec pod install 安装本地库，成功后就能在 Pod项目中看到了
     2.2 本地库升级为私有库，私有库发布为开源库，待叙
         
+    2.3 本地库，源文件未导入到Pod中，因为源文件未放置到src中
 
