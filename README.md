@@ -22,4 +22,26 @@ iOS project engineering , components in swift
     2.2 本地库升级为私有库，私有库发布为开源库，待叙
         
     2.3 本地库，源文件未导入到Pod中，因为源文件未放置到src中
+    
+## 3、完善所语言支持和路由
+    3.0 多语言支持，英文和中文
+        3.0.1 默认语言文件存放在项目根目录的/Resources/zh-Hans.lproj文件中
+        3.0.2 其他语言文件存放在项目根目录的/Resources/en.lproj文件中
+        3.0.3 使用swiftgen 生成语言文件的swift代码 Strings.swift,在 /Generated/Strings.swift文件中
+    3.1 完善路由模块
+        3.1.1 统一路由模块，路由协议 Routing，包括regiser,route 两个方法的定义
+        3.1.2 路由实现 Router, 
+            初始化为单例shared,新定义路由表navigators[path:navigator]，包括实现register,route 两个方法
+            //注册路由
+            func register(path: String, navigator: Navigating)
+            //解析路由并跳转
+            func route(to url: URL?, from routingSource: RoutingSource?, using transitionType: TransitionType = .present)
+    
+        3.1.3 需要配合指定页面的路由器实现跳转
+        例如路由器：struct InternalMenuNavigator: Navigating 
+        实现路由导航方法：
+        func navigate(from viewController: UIViewController, using transitionType: TransitionType, parameters: [String : String]) 
+        此方法中还可加入开关控制，只让 内部支持的测试页面可以跳转，如编译时确定的跳转，只让Debug和Internal 的scheme 编译时通过。
+            判断通过后，内部再调用 route(to url: URL?, from routingSource: RoutingSource?, using transitionType: TransitionType = .present)方法
+        
 
