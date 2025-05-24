@@ -1,0 +1,16 @@
+//
+//  InternalTarget.xcconfig
+//  Moments
+//
+//  Created by wjw on 2025/5/20.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "../Pods/Target Support Files/Pods-Moments/Pods-Moments.internal.xcconfig"
+#include "BaseTarget.xcconfig"
+
+PRODUCT_BUNDLE_NAME = $(inherited) β
+PRODUCT_BUNDLE_IDENTIFIER = com.ibanimatable.moments.internal
+FIREBASE_CONFIG_FILENAME = GoogleService-Info-Internal

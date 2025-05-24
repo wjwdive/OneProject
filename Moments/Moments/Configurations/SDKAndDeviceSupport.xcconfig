@@ -1,0 +1,14 @@
+//
+//  SDKAndDeviceSupport.xcconfig
+//  Moments
+//
+//  Created by wjw on 2025/5/20.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Deployment
+TARGETED_DEVICE_FAMILY = 1
+IPHONEOS_DEPLOYMENT_TARGET = 15.0
+

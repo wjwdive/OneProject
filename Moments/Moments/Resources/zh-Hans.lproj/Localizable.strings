@@ -1,0 +1,66 @@
+/* 
+  Localizable.strings
+  Moments
+
+  Created by wjw on 2025/5/23.
+  
+*/
+
+/*多语言支持
+  1. 语言文件名为 Localizable.strings
+  2. 文件内容格式为 key = value
+  3. 在代码中使用 NSLocalizedString("key", comment: "comment") 来获取对应的值
+  4. 在Project.info 配置下的Localization 待 选项添加多语言支持,比如中文，英文
+    只使用一两种语言，且内容较少，可以手动写。如果支持多国语言，需要使用第三方库 SwiftGen
+ 5. swiftgen.yml 文件配置,注意正确的目录，比如新建的swiftgen.yml 文件在项目根目录下,脚本也要配置正确
+
+ 以下脚本在 build parser 运行,且在远文件编译之前运行
+
+ ···
+   if [ -f "${PODS_ROOT}/SwiftGen/bin/swiftgen" ]; then
+     "${PODS_ROOT}/SwiftGen/bin/swiftgen" config run --config "${SRCROOT}/swiftgen.yml"
+    else
+     echo "warning: SwiftGen not installed."
+    fi
+ ···
+    //使用命令，手动生成 swiftgen.yml :  ./Pods/SwiftGen/bin/swiftgen config init
+*/
+
+"Commom.userName" = "用户名";
+"Commom.password" = "密码";
+"Commom.Hello" = "你好";
+
+
+// Internal Menu
+"internalMenu.area51" = "51 区";
+"internalMenu.generalInfo" = "通用信息";
+"internalMenu.version" = "版本号";
+"internalMenu.CFBundleVersion" = "CFBundleVersion";
+"internalMenu.designKitDemo" = "DesignKit 范例";
+"internalMenu.featureToggles" = "功能开关";
+"internalMenu.tools" = "工具箱";
+"internalMenu.crashApp" = "闪退 App";
+
+"internalMenu.typography" = "字体";
+"internalMenu.colors" = "颜色";
+"internalMenu.avatars" = "人像";
+
+"internalMenu.favoriteButton" = "点赞按钮";
+"internalMenu.starFavoriteButton" = "星形点赞按钮";
+"internalMenu.heartFavoriteButton" = "心形点赞按钮";
+
+"internalMenu.likeButtonForMomentEnabled" = "开启点赞按钮";
+
+// Moments List
+"momentsList.errorMessage" = "出错啦，请稍后再试";
+
+// Development messages
+"development.defaultConfiguration" = "Default Configuration";
+"development.fatalErrorInitCoderNotImplemented" = "init(coder:) has not been implemented";
+"development.fatalErrorAccessedAutomaticallyAdjustedContentViewEarly" = "This property has been accessed before the superview has been loaded. Only use this property in `viewDidLoad` or later, as accessing it inside `init` may add a second instance of this view to the hierarchy.";
+"development.fatalErrorSubclassToImplement" = "Subclass has to implement this function";
+"development.graphqlPath" = "/graphql";
+"development.runningUnitTests" = "运行单元测试中...";
+
+// Tracking events
+"Tracking.momentsScreen" = "Moments screen";

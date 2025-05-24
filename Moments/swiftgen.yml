@@ -1,0 +1,7 @@
+
+strings:
+   inputs:
+     - Moments/Resources/zh-Hans.lproj
+   outputs:
+     - templateName: structured-swift5
+       output: Moments/Generated/Strings.swift

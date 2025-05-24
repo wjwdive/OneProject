@@ -1,0 +1,14 @@
+//
+//  CompilerAndLanguage.xcconfig
+//  Moments
+//
+//  Created by wjw on 2025/5/20.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Apple LLVM 9.0 - Language - Modules
+CLANG_ENABLE_MODULES = YES
+SWIFT_VERSION = 5.0
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64

@@ -1,0 +1,12 @@
+//
+//  BaseConfigurations.xcconfig
+//  Moments
+//
+//  Created by wjw on 2025/5/20.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// 可以在这里定义所有scheme 都会用到的统一的scheme配置，例如基础URL
+API_BASE_URL = momentsapi.herokuapp.com
