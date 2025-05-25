@@ -32,7 +32,7 @@ final class InternalMenuViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("InternalMenuViewController viewDidLoad")
         setupUI()
         setupConstraints()
 
@@ -55,7 +55,7 @@ private extension InternalMenuViewController {
             $0.edges.equalToSuperview()
         }
     }
-
+    //绑定
     func setupBindings() {
         let dismissBarButtonItem: UIBarButtonItem = UIBarButtonItem(systemItem: .done)
         dismissBarButtonItem.rx.tap.subscribe(onNext: { [weak self] in

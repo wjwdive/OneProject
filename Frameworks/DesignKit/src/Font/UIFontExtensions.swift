@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/// 动态字体（Dynamic Type）呢？动态字体实际上就是允许用户选择屏幕上显示文本内容的大小。它能帮助一些用户把字体变大来提高可读性，也能方便一些用户把字体变小，使得屏幕能显示更多内容。
 public extension UIFont {
     static let designKit = DesignKitTypography()
 

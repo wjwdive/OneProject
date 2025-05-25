@@ -16,6 +16,7 @@ struct InternalMenuNavigator: Navigating {
         }
 
         let navigationController = UINavigationController(rootViewController: InternalMenuViewController())
+        print("InternalMenuNavigator navigate")
         navigate(to: navigationController, from: viewController, using: transitionType)
     }
 }

@@ -1,7 +1,9 @@
 // The colors are picked up from https://backpack.github.io/guidelines/colors
 
 import UIKit
-
+/// 语义化颜色（Semantic colors）来进行适配。什么叫语义化颜色呢？语义化颜色是我们根据用途来定义颜色的名称，例如使用在背景上的颜色定义为background，主文本和副文本的颜色分别定义为primaryText和secondaryText。
+/// 语义化颜色的好处在于，假设我们需要对某个颜色进行修改，只需要修改语义化颜色的定义即可，而不需要去修改每一个使用了这个颜色的地方。这样就避免了重复劳动和错误。
+/// 简化深色模式的适配过程，苹果公司提供了具有语义的系统色（System colors）和动态系统色（Dynamic system colors）供我们使用。
 public extension UIColor {
     static let designKit = DesignKitPalette.self
 
