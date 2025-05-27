@@ -10,3 +10,5 @@
 
 // 可以在这里定义所有scheme 都会用到的统一的scheme配置，例如基础URL
 API_BASE_URL = momentsapi.herokuapp.com
+API_BASE_URL_LOCAL = localhost:3000
+
