@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.frame = windowScene.coordinateSpace.bounds
         print("H:Q", window?.frame.height ?? 0, " ", window?.frame.width ?? 0)
         // 3. 创建根视图控制器（例如：ViewController 或导航控制器）
-        let rootViewController = ViewController()
+        let rootViewController = MomentsTimelineViewController() //ViewController()
         // 或使用导航控制器：
         // let navController = UINavigationController(rootViewController: rootViewController)
         

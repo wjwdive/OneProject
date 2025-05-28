@@ -140,6 +140,66 @@
 		6F4045C02DE6266200159B14 /* UserDefaultsPersistentDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045BF2DE6266200159B14 /* UserDefaultsPersistentDataStore.swift */; };
 		6F4045C12DE6266200159B14 /* UserDefaultsPersistentDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045BF2DE6266200159B14 /* UserDefaultsPersistentDataStore.swift */; };
 		6F4045C22DE6266200159B14 /* UserDefaultsPersistentDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045BF2DE6266200159B14 /* UserDefaultsPersistentDataStore.swift */; };
+		6F4045C52DE6D23500159B14 /* RelativeDateTimeFormatterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045C42DE6D23500159B14 /* RelativeDateTimeFormatterType.swift */; };
+		6F4045C62DE6D23500159B14 /* RelativeDateTimeFormatterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045C42DE6D23500159B14 /* RelativeDateTimeFormatterType.swift */; };
+		6F4045C72DE6D23500159B14 /* RelativeDateTimeFormatterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045C42DE6D23500159B14 /* RelativeDateTimeFormatterType.swift */; };
+		6F4045C92DE700EC00159B14 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045C82DE700EC00159B14 /* BaseTableViewController.swift */; };
+		6F4045CA2DE700EC00159B14 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045C82DE700EC00159B14 /* BaseTableViewController.swift */; };
+		6F4045CB2DE700EC00159B14 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045C82DE700EC00159B14 /* BaseTableViewController.swift */; };
+		6F4045CE2DE7017300159B14 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045CD2DE7017300159B14 /* ListViewModel.swift */; };
+		6F4045CF2DE7017300159B14 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045CD2DE7017300159B14 /* ListViewModel.swift */; };
+		6F4045D02DE7017300159B14 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045CD2DE7017300159B14 /* ListViewModel.swift */; };
+		6F4045D22DE7017E00159B14 /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045D12DE7017E00159B14 /* ListItemViewModel.swift */; };
+		6F4045D32DE7017E00159B14 /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045D12DE7017E00159B14 /* ListItemViewModel.swift */; };
+		6F4045D42DE7017E00159B14 /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045D12DE7017E00159B14 /* ListItemViewModel.swift */; };
+		6F4045D62DE7101C00159B14 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045D52DE7101C00159B14 /* BaseTableViewCell.swift */; };
+		6F4045D72DE7101C00159B14 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045D52DE7101C00159B14 /* BaseTableViewCell.swift */; };
+		6F4045D82DE7101C00159B14 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045D52DE7101C00159B14 /* BaseTableViewCell.swift */; };
+		6F4045DA2DE7111500159B14 /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045D92DE7111500159B14 /* ListItemCell.swift */; };
+		6F4045DB2DE7111500159B14 /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045D92DE7111500159B14 /* ListItemCell.swift */; };
+		6F4045DC2DE7111500159B14 /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045D92DE7111500159B14 /* ListItemCell.swift */; };
+		6F4045DE2DE7112800159B14 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045DD2DE7112800159B14 /* ListItemView.swift */; };
+		6F4045DF2DE7112800159B14 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045DD2DE7112800159B14 /* ListItemView.swift */; };
+		6F4045E02DE7112800159B14 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045DD2DE7112800159B14 /* ListItemView.swift */; };
+		6F4045E22DE7115E00159B14 /* BaseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045E12DE7115E00159B14 /* BaseListItemView.swift */; };
+		6F4045E32DE7115E00159B14 /* BaseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045E12DE7115E00159B14 /* BaseListItemView.swift */; };
+		6F4045E42DE7115E00159B14 /* BaseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045E12DE7115E00159B14 /* BaseListItemView.swift */; };
+		6F4045E82DE713BE00159B14 /* MomentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045E72DE713BE00159B14 /* MomentListItemView.swift */; };
+		6F4045E92DE713BE00159B14 /* MomentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045E72DE713BE00159B14 /* MomentListItemView.swift */; };
+		6F4045EA2DE713BE00159B14 /* MomentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045E72DE713BE00159B14 /* MomentListItemView.swift */; };
+		6F4045EC2DE71BDA00159B14 /* MomentListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045EB2DE71BDA00159B14 /* MomentListItemViewModel.swift */; };
+		6F4045ED2DE71BDA00159B14 /* MomentListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045EB2DE71BDA00159B14 /* MomentListItemViewModel.swift */; };
+		6F4045EE2DE71BDA00159B14 /* MomentListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045EB2DE71BDA00159B14 /* MomentListItemViewModel.swift */; };
+		6F4045F02DE71FC700159B14 /* MomentsTimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045EF2DE71FC700159B14 /* MomentsTimelineViewModel.swift */; };
+		6F4045F12DE71FC700159B14 /* MomentsTimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045EF2DE71FC700159B14 /* MomentsTimelineViewModel.swift */; };
+		6F4045F22DE71FC700159B14 /* MomentsTimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045EF2DE71FC700159B14 /* MomentsTimelineViewModel.swift */; };
+		6F4045F42DE722A100159B14 /* UserProfileListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045F32DE722A100159B14 /* UserProfileListItemViewModel.swift */; };
+		6F4045F52DE722A100159B14 /* UserProfileListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045F32DE722A100159B14 /* UserProfileListItemViewModel.swift */; };
+		6F4045F62DE722A100159B14 /* UserProfileListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045F32DE722A100159B14 /* UserProfileListItemViewModel.swift */; };
+		6F4045F92DE7620000159B14 /* ABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045F82DE7620000159B14 /* ABTestProvider.swift */; };
+		6F4045FA2DE7620000159B14 /* ABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045F82DE7620000159B14 /* ABTestProvider.swift */; };
+		6F4045FB2DE7620000159B14 /* ABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045F82DE7620000159B14 /* ABTestProvider.swift */; };
+		6F4045FD2DE7622300159B14 /* FirebaseABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045FC2DE7622300159B14 /* FirebaseABTestProvider.swift */; };
+		6F4045FE2DE7622300159B14 /* FirebaseABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045FC2DE7622300159B14 /* FirebaseABTestProvider.swift */; };
+		6F4045FF2DE7622300159B14 /* FirebaseABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4045FC2DE7622300159B14 /* FirebaseABTestProvider.swift */; };
+		6F4046022DE7627300159B14 /* RemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046012DE7627300159B14 /* RemoteConfigProvider.swift */; };
+		6F4046032DE7627300159B14 /* RemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046012DE7627300159B14 /* RemoteConfigProvider.swift */; };
+		6F4046042DE7627300159B14 /* RemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046012DE7627300159B14 /* RemoteConfigProvider.swift */; };
+		6F4046062DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F4046052DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist */; };
+		6F4046072DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F4046052DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist */; };
+		6F4046082DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F4046052DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist */; };
+		6F40460A2DE762F900159B14 /* FirebaseRemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046092DE762F900159B14 /* FirebaseRemoteConfigProvider.swift */; };
+		6F40460B2DE762F900159B14 /* FirebaseRemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046092DE762F900159B14 /* FirebaseRemoteConfigProvider.swift */; };
+		6F40460C2DE762F900159B14 /* FirebaseRemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046092DE762F900159B14 /* FirebaseRemoteConfigProvider.swift */; };
+		6F40460E2DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40460D2DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift */; };
+		6F40460F2DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40460D2DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift */; };
+		6F4046102DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40460D2DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift */; };
+		6F4046122DE7686600159B14 /* MomentsTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046112DE7686600159B14 /* MomentsTimelineViewController.swift */; };
+		6F4046132DE7686600159B14 /* MomentsTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046112DE7686600159B14 /* MomentsTimelineViewController.swift */; };
+		6F4046142DE7686600159B14 /* MomentsTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046112DE7686600159B14 /* MomentsTimelineViewController.swift */; };
+		6F4046162DE7688D00159B14 /* UserProfileListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046152DE7688D00159B14 /* UserProfileListItemView.swift */; };
+		6F4046172DE7688D00159B14 /* UserProfileListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046152DE7688D00159B14 /* UserProfileListItemView.swift */; };
+		6F4046182DE7688D00159B14 /* UserProfileListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4046152DE7688D00159B14 /* UserProfileListItemView.swift */; };
 		6F6AEECA2DDC88570008EA8D /* SDKAndDeviceSupport.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AEEC92DDC88570008EA8D /* SDKAndDeviceSupport.xcconfig */; };
 		6F6AEECB2DDC88570008EA8D /* SDKAndDeviceSupport.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AEEC92DDC88570008EA8D /* SDKAndDeviceSupport.xcconfig */; };
 		6F6AEECC2DDC88570008EA8D /* SDKAndDeviceSupport.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AEEC92DDC88570008EA8D /* SDKAndDeviceSupport.xcconfig */; };
@@ -256,6 +316,26 @@
 		6F4045B72DE6255F00159B14 /* PersistentDataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentDataStoreType.swift; sourceTree = "<group>"; };
 		6F4045BB2DE625C900159B14 /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
 		6F4045BF2DE6266200159B14 /* UserDefaultsPersistentDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistentDataStore.swift; sourceTree = "<group>"; };
+		6F4045C42DE6D23500159B14 /* RelativeDateTimeFormatterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeDateTimeFormatterType.swift; sourceTree = "<group>"; };
+		6F4045C82DE700EC00159B14 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		6F4045CD2DE7017300159B14 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		6F4045D12DE7017E00159B14 /* ListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewModel.swift; sourceTree = "<group>"; };
+		6F4045D52DE7101C00159B14 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		6F4045D92DE7111500159B14 /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
+		6F4045DD2DE7112800159B14 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
+		6F4045E12DE7115E00159B14 /* BaseListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListItemView.swift; sourceTree = "<group>"; };
+		6F4045E72DE713BE00159B14 /* MomentListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentListItemView.swift; sourceTree = "<group>"; };
+		6F4045EB2DE71BDA00159B14 /* MomentListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentListItemViewModel.swift; sourceTree = "<group>"; };
+		6F4045EF2DE71FC700159B14 /* MomentsTimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsTimelineViewModel.swift; sourceTree = "<group>"; };
+		6F4045F32DE722A100159B14 /* UserProfileListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileListItemViewModel.swift; sourceTree = "<group>"; };
+		6F4045F82DE7620000159B14 /* ABTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTestProvider.swift; sourceTree = "<group>"; };
+		6F4045FC2DE7622300159B14 /* FirebaseABTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseABTestProvider.swift; sourceTree = "<group>"; };
+		6F4046012DE7627300159B14 /* RemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigProvider.swift; sourceTree = "<group>"; };
+		6F4046052DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FirebaseRemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		6F4046092DE762F900159B14 /* FirebaseRemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigProvider.swift; sourceTree = "<group>"; };
+		6F40460D2DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteTogglesDataStore.swift; sourceTree = "<group>"; };
+		6F4046112DE7686600159B14 /* MomentsTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsTimelineViewController.swift; sourceTree = "<group>"; };
+		6F4046152DE7688D00159B14 /* UserProfileListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileListItemView.swift; sourceTree = "<group>"; };
 		6F6AEEC62DDC877F0008EA8D /* BaseConfigurations.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseConfigurations.xcconfig; sourceTree = "<group>"; };
 		6F6AEEC72DDC87EA0008EA8D /* BaseProject.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseProject.xcconfig; sourceTree = "<group>"; };
 		6F6AEEC82DDC88130008EA8D /* CompilerAndLanguage.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CompilerAndLanguage.xcconfig; sourceTree = "<group>"; };
@@ -433,6 +513,10 @@
 		6F4045062DDF89D100159B14 /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				6F4046002DE7625E00159B14 /* RemoteConfig */,
+				6F4045F72DE761F000159B14 /* ABTest */,
+				6F4045CC2DE7015A00159B14 /* ViewModels */,
+				6F4045C32DE6D21A00159B14 /* DateFormatter */,
 				6F4045B62DE6254300159B14 /* DataStore */,
 				6F4045952DE43D7000159B14 /* Networking */,
 				6F40458D2DE1AE4900159B14 /* Extension */,
@@ -449,6 +533,11 @@
 			isa = PBXGroup;
 			children = (
 				6F4045082DDF8A2700159B14 /* BaseViewController.swift */,
+				6F4045C82DE700EC00159B14 /* BaseTableViewController.swift */,
+				6F4045D52DE7101C00159B14 /* BaseTableViewCell.swift */,
+				6F4045E12DE7115E00159B14 /* BaseListItemView.swift */,
+				6F4045D92DE7111500159B14 /* ListItemCell.swift */,
+				6F4045DD2DE7112800159B14 /* ListItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -494,6 +583,7 @@
 				6F4045392DDF999400159B14 /* TogglesDataStoreType.swift */,
 				6F40453D2DDF99B000159B14 /* InternalTogglesDataStore.swift */,
 				6F4045412DDF99CF00159B14 /* BuildTargetTogglesDataStore.swift */,
+				6F40460D2DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift */,
 			);
 			path = Toggles;
 			sourceTree = "<group>";
@@ -551,6 +641,8 @@
 		6F40459E2DE44D1000159B14 /* Moments */ = {
 			isa = PBXGroup;
 			children = (
+				6F4045E62DE7138700159B14 /* Views */,
+				6F4045E52DE7137900159B14 /* ViewModels */,
 				6F4045B12DE6236B00159B14 /* Repositories */,
 				6F4045A42DE44D9200159B14 /* Models */,
 				6F40459F2DE44D1800159B14 /* Networking */,
@@ -592,6 +684,62 @@
 				6F4045BF2DE6266200159B14 /* UserDefaultsPersistentDataStore.swift */,
 			);
 			path = DataStore;
+			sourceTree = "<group>";
+		};
+		6F4045C32DE6D21A00159B14 /* DateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				6F4045C42DE6D23500159B14 /* RelativeDateTimeFormatterType.swift */,
+			);
+			path = DateFormatter;
+			sourceTree = "<group>";
+		};
+		6F4045CC2DE7015A00159B14 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6F4045CD2DE7017300159B14 /* ListViewModel.swift */,
+				6F4045D12DE7017E00159B14 /* ListItemViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6F4045E52DE7137900159B14 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6F4045EB2DE71BDA00159B14 /* MomentListItemViewModel.swift */,
+				6F4045EF2DE71FC700159B14 /* MomentsTimelineViewModel.swift */,
+				6F4045F32DE722A100159B14 /* UserProfileListItemViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6F4045E62DE7138700159B14 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6F4045E72DE713BE00159B14 /* MomentListItemView.swift */,
+				6F4046112DE7686600159B14 /* MomentsTimelineViewController.swift */,
+				6F4046152DE7688D00159B14 /* UserProfileListItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6F4045F72DE761F000159B14 /* ABTest */ = {
+			isa = PBXGroup;
+			children = (
+				6F4045F82DE7620000159B14 /* ABTestProvider.swift */,
+				6F4045FC2DE7622300159B14 /* FirebaseABTestProvider.swift */,
+			);
+			path = ABTest;
+			sourceTree = "<group>";
+		};
+		6F4046002DE7625E00159B14 /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				6F4046012DE7627300159B14 /* RemoteConfigProvider.swift */,
+				6F4046052DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist */,
+				6F4046092DE762F900159B14 /* FirebaseRemoteConfigProvider.swift */,
+			);
+			path = RemoteConfig;
 			sourceTree = "<group>";
 		};
 		6F6AEEC52DDC872B0008EA8D /* Configurations */ = {
@@ -746,6 +894,7 @@
 				6F6AEEDB2DDC88E50008EA8D /* BaseTarget.xcconfig in Resources */,
 				6F6AEECA2DDC88570008EA8D /* SDKAndDeviceSupport.xcconfig in Resources */,
 				6F2BC3272BC3AE7200B3E078 /* Assets.xcassets in Resources */,
+				6F4046062DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist in Resources */,
 				6FBE223F2DDCA27000ACFB72 /* Launch Screen.storyboard in Resources */,
 				6FBE22432DDCA2A600ACFB72 /* Main.storyboard in Resources */,
 				6F6AEEE32DDC89310008EA8D /* InternalProject.xcconfig in Resources */,
@@ -774,6 +923,7 @@
 				6FBE22442DDCA2A600ACFB72 /* Main.storyboard in Resources */,
 				6F6AEEE42DDC89310008EA8D /* InternalProject.xcconfig in Resources */,
 				6F6AEECB2DDC88570008EA8D /* SDKAndDeviceSupport.xcconfig in Resources */,
+				6F4046072DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist in Resources */,
 				6F6AEED92DDC88DE0008EA8D /* DebugProject.xcconfig in Resources */,
 				6F6AEED12DDC88670008EA8D /* BaseProject.xcconfig in Resources */,
 				6F6AEECE2DDC88600008EA8D /* CompilerAndLanguage.xcconfig in Resources */,
@@ -795,6 +945,7 @@
 				6FBE22452DDCA2A600ACFB72 /* Main.storyboard in Resources */,
 				6F6AEEE52DDC89310008EA8D /* InternalProject.xcconfig in Resources */,
 				6F6AEECC2DDC88570008EA8D /* SDKAndDeviceSupport.xcconfig in Resources */,
+				6F4046082DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist in Resources */,
 				6F6AEEDA2DDC88DE0008EA8D /* DebugProject.xcconfig in Resources */,
 				6F6AEED22DDC88670008EA8D /* BaseProject.xcconfig in Resources */,
 				6F6AEECF2DDC88610008EA8D /* CompilerAndLanguage.xcconfig in Resources */,
@@ -922,11 +1073,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F4044F32DDF847B00159B14 /* InternalMenuViewController.swift in Sources */,
+				6F4045E82DE713BE00159B14 /* MomentListItemView.swift in Sources */,
 				6F4044F72DDF84A000159B14 /* InternalMenuCellType.swift in Sources */,
 				6F4045352DDF948E00159B14 /* RoutingSource.swift in Sources */,
 				6F40454A2DDF9AD100159B14 /* InternalMenuSection.swift in Sources */,
 				6F4045422DDF99CF00159B14 /* BuildTargetTogglesDataStore.swift in Sources */,
 				6F4045252DDF93C600159B14 /* AppRouting.swift in Sources */,
+				6F4045E22DE7115E00159B14 /* BaseListItemView.swift in Sources */,
 				6F4045AA2DE4566500159B14 /* UpdateMomentLikeSession.swift in Sources */,
 				6F4045292DDF93E000159B14 /* Navigating.swift in Sources */,
 				6F40453E2DDF99B000159B14 /* InternalTogglesDataStore.swift in Sources */,
@@ -935,33 +1088,50 @@
 				6F40458A2DE1ABB000159B14 /* DesignKitDemoNavigator.swift in Sources */,
 				6F4045BC2DE625C900159B14 /* UserDataStore.swift in Sources */,
 				6F40454E2DDF9B0500159B14 /* InternalMenuFeatureToggleItemViewModel.swift in Sources */,
+				6F40460E2DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift in Sources */,
 				6F2BC3222BC3AE6E00B3E078 /* ViewController.swift in Sources */,
+				6F4045DE2DE7112800159B14 /* ListItemView.swift in Sources */,
 				6F4045862DE1A70400159B14 /* Strings.swift in Sources */,
+				6F4045D62DE7101C00159B14 /* BaseTableViewCell.swift in Sources */,
 				6F4045B82DE6255F00159B14 /* PersistentDataStoreType.swift in Sources */,
 				6F4045212DDF939700159B14 /* AppRouter.swift in Sources */,
+				6F4045EC2DE71BDA00159B14 /* MomentListItemViewModel.swift in Sources */,
 				6F4045132DDF901300159B14 /* Functions.swift in Sources */,
+				6F4046022DE7627300159B14 /* RemoteConfigProvider.swift in Sources */,
+				6F4046162DE7688D00159B14 /* UserProfileListItemView.swift in Sources */,
 				6F40458F2DE1AE6100159B14 /* UIApplicationExtensions.swift in Sources */,
+				6F4045CE2DE7017300159B14 /* ListViewModel.swift in Sources */,
 				6F2BC31E2BC3AE6E00B3E078 /* AppDelegate.swift in Sources */,
+				6F4045D22DE7017E00159B14 /* ListItemViewModel.swift in Sources */,
 				6F4045172DDF905000159B14 /* Configuration.swift in Sources */,
+				6F4045F02DE71FC700159B14 /* MomentsTimelineViewModel.swift in Sources */,
 				6F4045662DDFA0BC00159B14 /* InternalMenuActionTriggerCell.swift in Sources */,
 				6F4045B32DE6238500159B14 /* MomentsRepo.swift in Sources */,
 				6F4045C02DE6266200159B14 /* UserDefaultsPersistentDataStore.swift in Sources */,
 				6F40453A2DDF999400159B14 /* TogglesDataStoreType.swift in Sources */,
 				6F40459B2DE43D9400159B14 /* APISession.swift in Sources */,
+				6F4045C92DE700EC00159B14 /* BaseTableViewController.swift in Sources */,
 				6F4045A62DE4522B00159B14 /* MomentsDetails.swift in Sources */,
 				6F2BC3202BC3AE6E00B3E078 /* SceneDelegate.swift in Sources */,
+				6F4045FD2DE7622300159B14 /* FirebaseABTestProvider.swift in Sources */,
 				6F4045092DDF8A2700159B14 /* BaseViewController.swift in Sources */,
 				6F40455A2DDF9B5600159B14 /* InternalMenuActionTriggerItemViewModel.swift in Sources */,
 				6F40451C2DDF92AA00159B14 /* InternalMenuNavigator.swift in Sources */,
+				6F4045DA2DE7111500159B14 /* ListItemCell.swift in Sources */,
 				6F4044FF2DDF874500159B14 /* InternalMenuDescriptionCell.swift in Sources */,
+				6F4046122DE7686600159B14 /* MomentsTimelineViewController.swift in Sources */,
+				6F4045C52DE6D23500159B14 /* RelativeDateTimeFormatterType.swift in Sources */,
 				6F4045562DDF9B3900159B14 /* InternalMenuCrashAppItemViewModel.swift in Sources */,
 				6F40452D2DDF93F800159B14 /* TransitionType.swift in Sources */,
 				6F4045032DDF87E600159B14 /* InternalMenuDescriptionItemViewModel.swift in Sources */,
 				6F4044FB2DDF853D00159B14 /* InternalMenuItemViewModel.swift in Sources */,
 				6F4045522DDF9B2000159B14 /* InternalMenuDesignKitDemoItemViewModel.swift in Sources */,
 				6F4045462DDF9A9B00159B14 /* InternalMenuViewModel.swift in Sources */,
+				6F40460A2DE762F900159B14 /* FirebaseRemoteConfigProvider.swift in Sources */,
 				6F4045622DDF9BF800159B14 /* DesignKitDemoViewController.swift in Sources */,
 				6F4045AE2DE5BF0F00159B14 /* GetMomentsByUserIDRestful.swift in Sources */,
+				6F4045F42DE722A100159B14 /* UserProfileListItemViewModel.swift in Sources */,
+				6F4045F92DE7620000159B14 /* ABTestProvider.swift in Sources */,
 				6F4045972DE43D8600159B14 /* API.swift in Sources */,
 				6F4045312DDF941400159B14 /* UniversalLinks.swift in Sources */,
 			);
@@ -974,26 +1144,37 @@
 				6F40455F2DDF9BB700159B14 /* InternalMenuFeatureToggleCell.swift in Sources */,
 				6F4045042DDF87E600159B14 /* InternalMenuDescriptionItemViewModel.swift in Sources */,
 				6F4045B42DE6238500159B14 /* MomentsRepo.swift in Sources */,
+				6F4045C62DE6D23500159B14 /* RelativeDateTimeFormatterType.swift in Sources */,
 				6F4045A22DE44D3B00159B14 /* GetMomentsByUserIDSession.swift in Sources */,
+				6F4045D32DE7017E00159B14 /* ListItemViewModel.swift in Sources */,
 				6F40453B2DDF999400159B14 /* TogglesDataStoreType.swift in Sources */,
+				6F40460B2DE762F900159B14 /* FirebaseRemoteConfigProvider.swift in Sources */,
 				6F4044F42DDF847B00159B14 /* InternalMenuViewController.swift in Sources */,
 				6F4045B92DE6255F00159B14 /* PersistentDataStoreType.swift in Sources */,
+				6F4045ED2DE71BDA00159B14 /* MomentListItemViewModel.swift in Sources */,
+				6F4045FA2DE7620000159B14 /* ABTestProvider.swift in Sources */,
 				6F4045532DDF9B2000159B14 /* InternalMenuDesignKitDemoItemViewModel.swift in Sources */,
 				6F40451D2DDF92AA00159B14 /* InternalMenuNavigator.swift in Sources */,
 				6F4045902DE1AE6100159B14 /* UIApplicationExtensions.swift in Sources */,
 				6F4045872DE1A70400159B14 /* Strings.swift in Sources */,
+				6F4045D72DE7101C00159B14 /* BaseTableViewCell.swift in Sources */,
 				6F40453F2DDF99B000159B14 /* InternalTogglesDataStore.swift in Sources */,
 				6F4045BD2DE625C900159B14 /* UserDataStore.swift in Sources */,
 				6F40459C2DE43D9400159B14 /* APISession.swift in Sources */,
 				6F40454B2DDF9AD100159B14 /* InternalMenuSection.swift in Sources */,
+				6F4045E32DE7115E00159B14 /* BaseListItemView.swift in Sources */,
 				6F4045572DDF9B3900159B14 /* InternalMenuCrashAppItemViewModel.swift in Sources */,
 				6F4045142DDF901300159B14 /* Functions.swift in Sources */,
 				6F4045AB2DE4566500159B14 /* UpdateMomentLikeSession.swift in Sources */,
 				6F4045002DDF874500159B14 /* InternalMenuDescriptionCell.swift in Sources */,
 				6F4044F82DDF84A000159B14 /* InternalMenuCellType.swift in Sources */,
 				6F2BC3352BC3AE7300B3E078 /* MomentsTests.swift in Sources */,
+				6F4045DB2DE7111500159B14 /* ListItemCell.swift in Sources */,
 				6F4045432DDF99CF00159B14 /* BuildTargetTogglesDataStore.swift in Sources */,
+				6F4045F52DE722A100159B14 /* UserProfileListItemViewModel.swift in Sources */,
 				6F40452E2DDF93F800159B14 /* TransitionType.swift in Sources */,
+				6F4045F12DE71FC700159B14 /* MomentsTimelineViewModel.swift in Sources */,
+				6F4045CA2DE700EC00159B14 /* BaseTableViewController.swift in Sources */,
 				6F4045C12DE6266200159B14 /* UserDefaultsPersistentDataStore.swift in Sources */,
 				6F4045182DDF905000159B14 /* Configuration.swift in Sources */,
 				6F4045AF2DE5BF0F00159B14 /* GetMomentsByUserIDRestful.swift in Sources */,
@@ -1003,14 +1184,22 @@
 				6F40458B2DE1ABB000159B14 /* DesignKitDemoNavigator.swift in Sources */,
 				6F4045222DDF939700159B14 /* AppRouter.swift in Sources */,
 				6F4045982DE43D8600159B14 /* API.swift in Sources */,
+				6F4046032DE7627300159B14 /* RemoteConfigProvider.swift in Sources */,
 				6F40450A2DDF8A2700159B14 /* BaseViewController.swift in Sources */,
 				6F4045632DDF9BF800159B14 /* DesignKitDemoViewController.swift in Sources */,
 				6F4045A72DE4522B00159B14 /* MomentsDetails.swift in Sources */,
+				6F4045CF2DE7017300159B14 /* ListViewModel.swift in Sources */,
 				6F40452A2DDF93E000159B14 /* Navigating.swift in Sources */,
+				6F4045E92DE713BE00159B14 /* MomentListItemView.swift in Sources */,
 				6F40455B2DDF9B5600159B14 /* InternalMenuActionTriggerItemViewModel.swift in Sources */,
+				6F4045DF2DE7112800159B14 /* ListItemView.swift in Sources */,
+				6F40460F2DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift in Sources */,
+				6F4045FE2DE7622300159B14 /* FirebaseABTestProvider.swift in Sources */,
+				6F4046172DE7688D00159B14 /* UserProfileListItemView.swift in Sources */,
 				6F4045362DDF948E00159B14 /* RoutingSource.swift in Sources */,
 				6F4044FC2DDF853D00159B14 /* InternalMenuItemViewModel.swift in Sources */,
 				6F4045262DDF93C600159B14 /* AppRouting.swift in Sources */,
+				6F4046132DE7686600159B14 /* MomentsTimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,15 +1208,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F4045642DDF9BF800159B14 /* DesignKitDemoViewController.swift in Sources */,
+				6F4045CB2DE700EC00159B14 /* BaseTableViewController.swift in Sources */,
 				6F4045332DDF941400159B14 /* UniversalLinks.swift in Sources */,
+				6F4046142DE7686600159B14 /* MomentsTimelineViewController.swift in Sources */,
+				6F4045E02DE7112800159B14 /* ListItemView.swift in Sources */,
 				6F4045012DDF874500159B14 /* InternalMenuDescriptionCell.swift in Sources */,
+				6F4045FB2DE7620000159B14 /* ABTestProvider.swift in Sources */,
 				6F4045602DDF9BB700159B14 /* InternalMenuFeatureToggleCell.swift in Sources */,
 				6F4045502DDF9B0500159B14 /* InternalMenuFeatureToggleItemViewModel.swift in Sources */,
 				6F40452B2DDF93E000159B14 /* Navigating.swift in Sources */,
 				6F4045052DDF87E600159B14 /* InternalMenuDescriptionItemViewModel.swift in Sources */,
 				6F4045912DE1AE6100159B14 /* UIApplicationExtensions.swift in Sources */,
 				6F40459D2DE43D9400159B14 /* APISession.swift in Sources */,
+				6F4045D02DE7017300159B14 /* ListViewModel.swift in Sources */,
 				6F4044F52DDF847B00159B14 /* InternalMenuViewController.swift in Sources */,
+				6F4045FF2DE7622300159B14 /* FirebaseABTestProvider.swift in Sources */,
+				6F4045F62DE722A100159B14 /* UserProfileListItemViewModel.swift in Sources */,
 				6F4045A82DE4522B00159B14 /* MomentsDetails.swift in Sources */,
 				6F4045152DDF901300159B14 /* Functions.swift in Sources */,
 				6F4045AC2DE4566500159B14 /* UpdateMomentLikeSession.swift in Sources */,
@@ -1036,28 +1232,40 @@
 				6F4045272DDF93C600159B14 /* AppRouting.swift in Sources */,
 				6F4045B02DE5BF1000159B14 /* GetMomentsByUserIDRestful.swift in Sources */,
 				6F4045B52DE6238500159B14 /* MomentsRepo.swift in Sources */,
+				6F4045D82DE7101C00159B14 /* BaseTableViewCell.swift in Sources */,
 				6F4044F92DDF84A000159B14 /* InternalMenuCellType.swift in Sources */,
 				6F4045482DDF9A9B00159B14 /* InternalMenuViewModel.swift in Sources */,
 				6F4045372DDF948E00159B14 /* RoutingSource.swift in Sources */,
 				6F2BC3412BC3AE7300B3E078 /* MomentsUITestsLaunchTests.swift in Sources */,
+				6F4045DC2DE7111500159B14 /* ListItemCell.swift in Sources */,
+				6F40460C2DE762F900159B14 /* FirebaseRemoteConfigProvider.swift in Sources */,
 				6F4045582DDF9B3900159B14 /* InternalMenuCrashAppItemViewModel.swift in Sources */,
+				6F4046102DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift in Sources */,
 				6F4045542DDF9B2000159B14 /* InternalMenuDesignKitDemoItemViewModel.swift in Sources */,
 				6F4045BA2DE6255F00159B14 /* PersistentDataStoreType.swift in Sources */,
 				6F40450B2DDF8A2700159B14 /* BaseViewController.swift in Sources */,
+				6F4046042DE7627300159B14 /* RemoteConfigProvider.swift in Sources */,
 				6F4045442DDF99CF00159B14 /* BuildTargetTogglesDataStore.swift in Sources */,
 				6F2BC33F2BC3AE7300B3E078 /* MomentsUITests.swift in Sources */,
 				6F4045BE2DE625C900159B14 /* UserDataStore.swift in Sources */,
+				6F4045E42DE7115E00159B14 /* BaseListItemView.swift in Sources */,
+				6F4045C72DE6D23500159B14 /* RelativeDateTimeFormatterType.swift in Sources */,
+				6F4045EE2DE71BDA00159B14 /* MomentListItemViewModel.swift in Sources */,
 				6F4044FD2DDF853D00159B14 /* InternalMenuItemViewModel.swift in Sources */,
 				6F4045C22DE6266200159B14 /* UserDefaultsPersistentDataStore.swift in Sources */,
+				6F4045F22DE71FC700159B14 /* MomentsTimelineViewModel.swift in Sources */,
 				6F4045882DE1A70400159B14 /* Strings.swift in Sources */,
 				6F40453C2DDF999400159B14 /* TogglesDataStoreType.swift in Sources */,
 				6F40452F2DDF93F800159B14 /* TransitionType.swift in Sources */,
+				6F4046182DE7688D00159B14 /* UserProfileListItemView.swift in Sources */,
 				6F4045232DDF939700159B14 /* AppRouter.swift in Sources */,
 				6F40455C2DDF9B5600159B14 /* InternalMenuActionTriggerItemViewModel.swift in Sources */,
 				6F40458C2DE1ABB000159B14 /* DesignKitDemoNavigator.swift in Sources */,
 				6F4045A32DE44D3B00159B14 /* GetMomentsByUserIDSession.swift in Sources */,
+				6F4045EA2DE713BE00159B14 /* MomentListItemView.swift in Sources */,
 				6F4045192DDF905000159B14 /* Configuration.swift in Sources */,
 				6F4045992DE43D8600159B14 /* API.swift in Sources */,
+				6F4045D42DE7017E00159B14 /* ListItemViewModel.swift in Sources */,
 				6F40451E2DDF92AA00159B14 /* InternalMenuNavigator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

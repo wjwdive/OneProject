@@ -33,6 +33,7 @@ struct MomentsDetails: Codable {
     struct MomentsUserDetails: Codable {
         let userId: String
         let avatar: String
+        let name: String
     }
     
     struct LikedUserDetails: Codable {
