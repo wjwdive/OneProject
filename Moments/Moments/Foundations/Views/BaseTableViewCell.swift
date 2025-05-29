@@ -21,7 +21,7 @@ final class BaseTableViewCell<V: BaseListItemView>: UITableViewCell, ListItemCel
             $0.edges.equalToSuperview()
         }
     }
-    
+    //重写init 方法，并抛出异常，防止外部误调用
     //swiftlint:disable unavailable_function
     required init?(coder: NSCoder) {
         fatalError(L10n.Development.fatalErrorInitCoderNotImplemented)

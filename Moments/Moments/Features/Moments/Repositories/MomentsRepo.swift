@@ -20,7 +20,7 @@ struct MomentsRepo: MomentsRepoType {
     private let disposeBag: DisposeBag = .init()
     
     private let persistentDataStore: PersistentDataStoreType
-    private let getMomentsByUserIDSession: GetMomentsByUserIDSessionType
+    private let getMomentsByUserIDRestful: GetMomentsByUserIDSessionType
     private let updateMomentLikeSession: UpdateMomentLikeSessionType
     
     static  let shared: MomentsRepo = {
@@ -35,14 +35,14 @@ struct MomentsRepo: MomentsRepoType {
          getMomentsByUserIDSession: GetMomentsByUserIDSessionType,
          updateMomentLikeSession: UpdateMomentLikeSessionType) {
         self.persistentDataStore = persistentDataStore
-        self.getMomentsByUserIDSession = getMomentsByUserIDSession
+        self.getMomentsByUserIDRestful = getMomentsByUserIDSession
         self.updateMomentLikeSession = updateMomentLikeSession
         
         setupBindings()
     }
     
     func getMoments(userID: String) -> Observable<Void> {
-        return getMomentsByUserIDSession
+        return getMomentsByUserIDRestful
             .getMoments(userID: userID)
             .do(onNext: {persistentDataStore.save(momentsDetails: $0)})
                 .map {_ in() }

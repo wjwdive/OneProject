@@ -13,3 +13,25 @@ func configure<T: AnyObject>(_ object: T, closure: (T) -> Void) -> T {
     closure(object)
     return object
 }
+
+/// 打印日志
+func printLog(_ items: Any...,
+              file: String = #file,
+              function: String = #function,
+              line: Int = #line) {
+    #if DEBUG
+    // 获取当前时间
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+    let timestamp = dateFormatter.string(from: Date())
+    
+    // 提取文件名（不含路径）
+    let fileName = (file as NSString).lastPathComponent
+    
+    // 拼接前缀信息
+    let prefix = "🕒 \(timestamp) | 📁 \(fileName) | ⚙️ \(function) | 📌 \(line):"
+    
+    // 打印完整日志
+    print(prefix, items)
+    #endif
+}

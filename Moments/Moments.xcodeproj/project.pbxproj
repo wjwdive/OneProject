@@ -233,6 +233,9 @@
 		6F6AEEEF2DDC89AE0008EA8D /* AppStoreTarget.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AEEEE2DDC89AE0008EA8D /* AppStoreTarget.xcconfig */; };
 		6F6AEEF02DDC89AE0008EA8D /* AppStoreTarget.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AEEEE2DDC89AE0008EA8D /* AppStoreTarget.xcconfig */; };
 		6F6AEEF12DDC89AE0008EA8D /* AppStoreTarget.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AEEEE2DDC89AE0008EA8D /* AppStoreTarget.xcconfig */; };
+		6F9198EE2DE83EAA0014424E /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9198ED2DE83EAA0014424E /* BaseResponseModel.swift */; };
+		6F9198EF2DE83EAA0014424E /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9198ED2DE83EAA0014424E /* BaseResponseModel.swift */; };
+		6F9198F02DE83EAA0014424E /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9198ED2DE83EAA0014424E /* BaseResponseModel.swift */; };
 		6FBE223F2DDCA27000ACFB72 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE223E2DDCA27000ACFB72 /* Launch Screen.storyboard */; };
 		6FBE22432DDCA2A600ACFB72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE22422DDCA2A600ACFB72 /* Main.storyboard */; };
 		6FBE22442DDCA2A600ACFB72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE22422DDCA2A600ACFB72 /* Main.storyboard */; };
@@ -347,6 +350,7 @@
 		6F6AEEE62DDC89550008EA8D /* InternalTarget.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = InternalTarget.xcconfig; sourceTree = "<group>"; };
 		6F6AEEEA2DDC89960008EA8D /* AppStoreProject.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStoreProject.xcconfig; sourceTree = "<group>"; };
 		6F6AEEEE2DDC89AE0008EA8D /* AppStoreTarget.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStoreTarget.xcconfig; sourceTree = "<group>"; };
+		6F9198ED2DE83EAA0014424E /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
 		6FBE223E2DDCA27000ACFB72 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		6FBE22422DDCA2A600ACFB72 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C0377FF8F34A3FBD88E2FF93 /* Pods-MomentsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.release.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -664,6 +668,7 @@
 			isa = PBXGroup;
 			children = (
 				6F4045A52DE4522B00159B14 /* MomentsDetails.swift */,
+				6F9198ED2DE83EAA0014424E /* BaseResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1108,6 +1113,7 @@
 				6F4045662DDFA0BC00159B14 /* InternalMenuActionTriggerCell.swift in Sources */,
 				6F4045B32DE6238500159B14 /* MomentsRepo.swift in Sources */,
 				6F4045C02DE6266200159B14 /* UserDefaultsPersistentDataStore.swift in Sources */,
+				6F9198EE2DE83EAA0014424E /* BaseResponseModel.swift in Sources */,
 				6F40453A2DDF999400159B14 /* TogglesDataStoreType.swift in Sources */,
 				6F40459B2DE43D9400159B14 /* APISession.swift in Sources */,
 				6F4045C92DE700EC00159B14 /* BaseTableViewController.swift in Sources */,
@@ -1162,6 +1168,7 @@
 				6F4045BD2DE625C900159B14 /* UserDataStore.swift in Sources */,
 				6F40459C2DE43D9400159B14 /* APISession.swift in Sources */,
 				6F40454B2DDF9AD100159B14 /* InternalMenuSection.swift in Sources */,
+				6F9198EF2DE83EAA0014424E /* BaseResponseModel.swift in Sources */,
 				6F4045E32DE7115E00159B14 /* BaseListItemView.swift in Sources */,
 				6F4045572DDF9B3900159B14 /* InternalMenuCrashAppItemViewModel.swift in Sources */,
 				6F4045142DDF901300159B14 /* Functions.swift in Sources */,
@@ -1211,6 +1218,7 @@
 				6F4045CB2DE700EC00159B14 /* BaseTableViewController.swift in Sources */,
 				6F4045332DDF941400159B14 /* UniversalLinks.swift in Sources */,
 				6F4046142DE7686600159B14 /* MomentsTimelineViewController.swift in Sources */,
+				6F9198F02DE83EAA0014424E /* BaseResponseModel.swift in Sources */,
 				6F4045E02DE7112800159B14 /* ListItemView.swift in Sources */,
 				6F4045012DDF874500159B14 /* InternalMenuDescriptionCell.swift in Sources */,
 				6F4045FB2DE7620000159B14 /* ABTestProvider.swift in Sources */,

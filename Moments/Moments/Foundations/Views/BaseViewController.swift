@@ -15,7 +15,7 @@ class BaseViewController: UIViewController {
     init() {
       super.init(nibName: nil, bundle: nil)
     }
-
+    // 重写 init:(nibName)方法，直接抛出错误，防止误调用
     // swiftlint:disable no_hardcoded_strings
     @available(*, unavailable, message: "We don't support init view controller from a nib.")
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -23,6 +23,7 @@ class BaseViewController: UIViewController {
     }
     // swiftlint:enable no_hardcoded_strings
 
+    // 重写  init(coder:)方法，直接抛出错误，防止误调用
     // swiftlint:disable no_hardcoded_strings
     @available(*, unavailable, message: "We don't support init view controller from a nib.")
     required init?(coder: NSCoder) {

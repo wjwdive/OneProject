@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         onLaunch()
+        localNetConfig()
         return true
     }
 
@@ -108,4 +109,26 @@ extension UIWindow {
             }
         }
     }
+}
+
+
+func localNetConfig() {
+    // 在 application(_:didFinishLaunchingWithOptions:) 中添加
+    #if DEBUG
+    // 禁用 ATS 限制
+    UserDefaults.standard.set(false, forKey: "NSAppTransportSecurity")
+
+    // 允许所有不安全的本地请求
+    func allowInsecureLocalhost() {
+        let exception = ["localhost", "127.0.0.1"]
+        let defaults: [String: Any] = [
+            "NSAllowsArbitraryLoads": true,
+            "NSExceptionDomains": exception.reduce(into: [:]) {
+                $0[$1] = ["NSExceptionAllowsInsecureHTTPLoads": true]
+            }
+        ]
+        UserDefaults.standard.register(defaults: ["NSAppTransportSecurity": defaults])
+    }
+    allowInsecureLocalhost()
+    #endif
 }

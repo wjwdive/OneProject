@@ -62,7 +62,7 @@ private extension APISession {
         encoding: ParameterEncoding
     ) -> Observable<ResponseType> {
         
-        let url = baseUrl.appendingPathComponent(path)
+        let url = path
         //合并默认 headers 和当前请求 headers，如果有重复的 key，以当前请求的为准
         let allHeaders = HTTPHeaders(defaultHeaders.dictionary.merging(headers.dictionary) { $1 })
         // {(_, new) in new }) 可替换为 { $1 }
@@ -83,9 +83,16 @@ private extension APISession {
                             return
                         }
                         do {
-                            let mode = try JSONDecoder().decode(ResponseType.self, from: data)
-                            observer.onNext(mode)
-                            observer.onCompleted()
+                            if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+                               let prettyData = try? JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted]),
+                               let prettyString = String(data: prettyData, encoding: .utf8) {
+                               print("response json:--------\n" + prettyString)
+                                let model = try JSONDecoder().decode(ResponseType.self, from: data)
+                                observer.onNext(model)
+                                observer.onCompleted()
+                            } else {
+                                print("无法格式化打印 JSON")
+                            }
                         } catch {
                             observer.onError(error)
                         }
@@ -100,7 +107,7 @@ private extension APISession {
             return Disposables.create {
                 request.cancel()
             }
-        }   //return Observable.create end
+        }.debug("request log:--------")   //return Observable.create end
     }//func request end
 }
 

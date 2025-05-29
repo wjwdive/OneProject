@@ -27,20 +27,21 @@ struct MomentListItemViewModel: ListItemViewModel {
          now: Date = Date(),
          relativeDateTimeFormatter: RelativeDateTimeFormatterType = RelativeDateTimeFormatter()
     ){
-        momentID = moment.id
+        momentID =  String(moment.id)
         self.momentsRepo = momentsRepo
 //        self.trackingRepo = trackingRepo
-        userAvatarURL = URL(string: moment.userDetials.avatar)
-        userName = moment.userDetials.name
-        title = moment.title
-        isLiked = moment.isLiked ?? false
-        likes = moment.likes?.compactMap { URL(string: $0.avatar )} ?? []
+        userAvatarURL = URL(string: moment.avatarUrl ?? "https://img2.baidu.com/it/u=2134545535,769157496&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500")
+        userName = moment.userName
+        title = String(moment.title)
+        isLiked = true// moment.isLiked ?? false
+        likes = []// moment.likes?.compactMap { URL(string: $0.avatar )} ?? []
         
-        if let firstPhoto = moment.photo.first {
-            photoURL = URL(string: firstPhoto)
-        }else {
-            photoURL = nil
-        }
+//        if let firstPhoto = moment.photo?.first {
+//            photoURL = URL(string: firstPhoto)
+//        }else {
+//            photoURL = nil
+//        }
+        photoURL = URL(string: "https://img2.baidu.com/it/u=2148062273,1464870050&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500")
         
         var formatter = relativeDateTimeFormatter
         formatter.unitsStyle = .full

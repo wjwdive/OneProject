@@ -45,5 +45,37 @@
 			</array>
 		</dict>
 	</dict>
+    
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <!-- 针对 localhost 的例外设置 -->
+            <key>localhost</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>  <!-- 允许 HTTP -->
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/> <!-- 禁用前向保密要求 -->
+                <key>NSRequiresCertificateTransparency</key>
+                <false/> <!-- 关闭证书透明性验证 -->
+            </dict>
+            
+            <!-- 如果使用 127.0.0.1 访问 -->
+            <key>192.168.0.100</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+            </dict>
+            <key>localhost</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
+    
 </dict>
 </plist>

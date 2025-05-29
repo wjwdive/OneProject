@@ -42,7 +42,7 @@ final class MomentListItemView: BaseListItemView {
         $0.clipsToBounds = true
     }
     
-    private let postDateDescriptioinLabel: UILabel = configure(.init()) {
+    private let postDateDescriptionLabel: UILabel = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.designKit.background
         $0.font = UIFont.designKit.small
@@ -126,7 +126,7 @@ final class MomentListItemView: BaseListItemView {
         userNameLabel.text = viewModel.userName
         titleLabel.text = viewModel.title
         momentImageView.kf.setImage(with: viewModel.photoURL)
-        postDateDescriptioinLabel.text = viewModel.postDateDescription
+        postDateDescriptionLabel.text = viewModel.postDateDescription
         
         if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             favoriteButton.isSelected = viewModel.isLiked
@@ -166,7 +166,7 @@ private extension MomentListItemView {
     func setupUI() {
         backgroundColor = UIColor.designKit.background
         
-        let verticalStackView: UIStackView = configure(.init()) {
+        let verticalStackView: UIStackView = configure(.init(arrangedSubviews: [userNameLabel, titleLabel, momentImageView, postDateDescriptionLabel])) {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.axis = .vertical
             $0.alignment = .leading
