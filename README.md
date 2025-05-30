@@ -43,5 +43,10 @@ iOS project engineering , components in swift
         func navigate(from viewController: UIViewController, using transitionType: TransitionType, parameters: [String : String]) 
         此方法中还可加入开关控制，只让 内部支持的测试页面可以跳转，如编译时确定的跳转，只让Debug和Internal 的scheme 编译时通过。
             判断通过后，内部再调用 route(to url: URL?, from routingSource: RoutingSource?, using transitionType: TransitionType = .present)方法
-        
-
+## 4、朋友圈基础雏形完成
+    可以请求本地接口模拟真实场景，
+    朋友圈图片支持多张图片（1-9张），目前还有个小BUG,两张图片时多处空白行
+    
+    效果图：
+    ![alt text](<Simulator Screen Shot - iPhone 13 mini - 2025-05-30 at 14.36.06.png>)
+    

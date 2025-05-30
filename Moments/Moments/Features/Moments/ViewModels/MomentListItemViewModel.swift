@@ -12,7 +12,7 @@ struct MomentListItemViewModel: ListItemViewModel {
     let userAvatarURL: URL?
     let userName: String
     let title: String?
-    let photoURL: URL?  //
+    let photoURLs: [URL]  // 修改为URL数组
     let postDateDescription: String?
     let isLiked: Bool
     let likes:[URL]
@@ -36,21 +36,14 @@ struct MomentListItemViewModel: ListItemViewModel {
         isLiked = true// moment.isLiked ?? false
         likes = []// moment.likes?.compactMap { URL(string: $0.avatar )} ?? []
         
-        if let firstPhoto = moment.photo?.first {
-            photoURL = URL(string: firstPhoto)
-        }else {
-            photoURL = nil
-        }
-//        photoURL = URL(string: "https://img2.baidu.com/it/u=2148062273,1464870050&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500")
+        // 处理多张图片
+        photoURLs = moment.photo?.compactMap { URL(string: $0) } ?? []
         
         var formatter = relativeDateTimeFormatter
         formatter.unitsStyle = .full
-        if let timeInterval = TimeInterval(moment.createdDate) {
-            let createdDate = Date(timeIntervalSince1970: timeInterval)
-            postDateDescription = formatter.localizedString(for: createdDate, relativeTo: now)
-        }else {
-            postDateDescription = nil
-        }
+        let createdDate = FormatterStrToDate.dateFromISOString(moment.createdDate)
+        postDateDescription = SocialMediaTimeFormatter.formattedTime(for: createdDate ??  Date.now, relativeTo: Date.now)
+
     }
     
     func like(from userID: String) -> Observable<Void> {

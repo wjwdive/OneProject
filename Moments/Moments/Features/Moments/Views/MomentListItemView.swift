@@ -32,6 +32,7 @@ final class MomentListItemView: BaseListItemView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.contentMode = .scaleAspectFit
         label.textColor = UIColor.designKit.secondaryText
+        label.numberOfLines = 0  // 允许文本多行显示
         return label
     }()
     
@@ -70,6 +71,14 @@ final class MomentListItemView: BaseListItemView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.designKit.line
     }
+    
+    private let photoGridView: PhotoGridView = {
+        let view = PhotoGridView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private var photoURLs: [URL] = []
     
     private var userDataStore: UserDataStoreType
     private var togglesDataStore: TogglesDataStoreType
@@ -125,7 +134,10 @@ final class MomentListItemView: BaseListItemView {
         userAvatarImageView.kf.setImage(with: viewModel.userAvatarURL)
         userNameLabel.text = viewModel.userName
         titleLabel.text = viewModel.title
-        momentImageView.kf.setImage(with: viewModel.photoURL)
+        
+        // 更新图片网格
+        photoGridView.configure(with: viewModel.photoURLs)
+        
         postDateDescriptionLabel.text = viewModel.postDateDescription
         
         if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
@@ -166,7 +178,7 @@ private extension MomentListItemView {
     func setupUI() {
         backgroundColor = UIColor.designKit.background
         
-        let verticalStackView: UIStackView = configure(.init(arrangedSubviews: [userNameLabel, titleLabel, momentImageView, postDateDescriptionLabel])) {
+        let verticalStackView: UIStackView = configure(.init(arrangedSubviews: [userNameLabel, titleLabel, photoGridView, postDateDescriptionLabel])) {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.axis = .vertical
             $0.alignment = .leading
@@ -219,9 +231,9 @@ private extension MomentListItemView {
             $0.height.width.equalTo(40)
         }
         
-        momentImageView.snp.makeConstraints {
-            $0.height.equalTo(120)
+        photoGridView.snp.makeConstraints {
             $0.width.equalTo(240)
+            $0.height.equalTo(240) // 最大高度，实际会根据内容自动调整
         }
         
         if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
