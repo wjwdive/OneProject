@@ -9,6 +9,27 @@
 /* Begin PBXBuildFile section */
 		376AFC54292EC5B7C82696BC /* Pods_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44BD1D5639581597E97F78DC /* Pods_Moments.framework */; };
 		5303041CDE17AE6FE18D6CE4 /* Pods_MomentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0647E19544E0920F0503F59E /* Pods_MomentsTests.framework */; };
+		6F2631B22DF09F6A009FA0FF /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631A92DF09F69009FA0FF /* MyInfoViewModel.swift */; };
+		6F2631B32DF09F6A009FA0FF /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631A92DF09F69009FA0FF /* MyInfoViewModel.swift */; };
+		6F2631B42DF09F6A009FA0FF /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631A92DF09F69009FA0FF /* MyInfoViewModel.swift */; };
+		6F2631B52DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631AB2DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift */; };
+		6F2631B62DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631AB2DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift */; };
+		6F2631B72DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631AB2DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift */; };
+		6F2631B82DF09F6A009FA0FF /* UserInfoRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631AD2DF09F6A009FA0FF /* UserInfoRepo.swift */; };
+		6F2631B92DF09F6A009FA0FF /* UserInfoRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631AD2DF09F6A009FA0FF /* UserInfoRepo.swift */; };
+		6F2631BA2DF09F6A009FA0FF /* UserInfoRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631AD2DF09F6A009FA0FF /* UserInfoRepo.swift */; };
+		6F2631BB2DF09F6A009FA0FF /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631AF2DF09F6A009FA0FF /* UserInfoModel.swift */; };
+		6F2631BC2DF09F6A009FA0FF /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631AF2DF09F6A009FA0FF /* UserInfoModel.swift */; };
+		6F2631BD2DF09F6A009FA0FF /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631AF2DF09F6A009FA0FF /* UserInfoModel.swift */; };
+		6F2631BE2DF09F6A009FA0FF /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631B12DF09F6A009FA0FF /* MyInfoViewController.swift */; };
+		6F2631BF2DF09F6A009FA0FF /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631B12DF09F6A009FA0FF /* MyInfoViewController.swift */; };
+		6F2631C02DF09F6A009FA0FF /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631B12DF09F6A009FA0FF /* MyInfoViewController.swift */; };
+		6F2631C22DF0A839009FA0FF /* UserInfoUserDefaultsPersistentDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631C12DF0A839009FA0FF /* UserInfoUserDefaultsPersistentDataStore.swift */; };
+		6F2631C32DF0A839009FA0FF /* UserInfoUserDefaultsPersistentDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631C12DF0A839009FA0FF /* UserInfoUserDefaultsPersistentDataStore.swift */; };
+		6F2631C42DF0A839009FA0FF /* UserInfoUserDefaultsPersistentDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631C12DF0A839009FA0FF /* UserInfoUserDefaultsPersistentDataStore.swift */; };
+		6F2631C62DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631C52DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift */; };
+		6F2631C72DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631C52DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift */; };
+		6F2631C82DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2631C52DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift */; };
 		6F2BC31E2BC3AE6E00B3E078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2BC31D2BC3AE6E00B3E078 /* AppDelegate.swift */; };
 		6F2BC3202BC3AE6E00B3E078 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2BC31F2BC3AE6E00B3E078 /* SceneDelegate.swift */; };
 		6F2BC3222BC3AE6E00B3E078 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2BC3212BC3AE6E00B3E078 /* ViewController.swift */; };
@@ -314,6 +335,13 @@
 		44BD1D5639581597E97F78DC /* Pods_Moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AF5A222456996263D9CAF4 /* Pods-Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.release.xcconfig"; path = "Target Support Files/Pods-Moments/Pods-Moments.release.xcconfig"; sourceTree = "<group>"; };
 		65E89644871FB61C32E7EF1D /* Pods-Moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.debug.xcconfig"; path = "Target Support Files/Pods-Moments/Pods-Moments.debug.xcconfig"; sourceTree = "<group>"; };
+		6F2631A92DF09F69009FA0FF /* MyInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoViewModel.swift; sourceTree = "<group>"; };
+		6F2631AB2DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserInfoByUserIdRestful.swift; sourceTree = "<group>"; };
+		6F2631AD2DF09F6A009FA0FF /* UserInfoRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoRepo.swift; sourceTree = "<group>"; };
+		6F2631AF2DF09F6A009FA0FF /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		6F2631B12DF09F6A009FA0FF /* MyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
+		6F2631C12DF0A839009FA0FF /* UserInfoUserDefaultsPersistentDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUserDefaultsPersistentDataStore.swift; sourceTree = "<group>"; };
+		6F2631C52DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPersistentDataStoreType.swift; sourceTree = "<group>"; };
 		6F2BC31A2BC3AE6E00B3E078 /* Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F2BC31D2BC3AE6E00B3E078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F2BC31F2BC3AE6E00B3E078 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -462,6 +490,60 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		6F2631A72DF09F69009FA0FF /* MyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				6F2631A82DF09F69009FA0FF /* ViewModels */,
+				6F2631AA2DF09F69009FA0FF /* Networking */,
+				6F2631AC2DF09F6A009FA0FF /* Repositories */,
+				6F2631AE2DF09F6A009FA0FF /* Models */,
+				6F2631B02DF09F6A009FA0FF /* Views */,
+			);
+			path = MyInfo;
+			sourceTree = "<group>";
+		};
+		6F2631A82DF09F69009FA0FF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6F2631A92DF09F69009FA0FF /* MyInfoViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6F2631AA2DF09F69009FA0FF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6F2631AB2DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6F2631AC2DF09F6A009FA0FF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				6F2631C12DF0A839009FA0FF /* UserInfoUserDefaultsPersistentDataStore.swift */,
+				6F2631C52DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift */,
+				6F2631AD2DF09F6A009FA0FF /* UserInfoRepo.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		6F2631AE2DF09F6A009FA0FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6F2631AF2DF09F6A009FA0FF /* UserInfoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6F2631B02DF09F6A009FA0FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6F2631B12DF09F6A009FA0FF /* MyInfoViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		6F2BC3112BC3AE6E00B3E078 = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +608,7 @@
 		6F4044ED2DDF836D00159B14 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				6F2631A72DF09F69009FA0FF /* MyInfo */,
 				6F40459E2DE44D1000159B14 /* Moments */,
 				6F40451A2DDF928A00159B14 /* Routing */,
 				6F4044EE2DDF841800159B14 /* InternalMenu */,
@@ -1318,9 +1401,11 @@
 				6F4045E82DE713BE00159B14 /* MomentListItemView.swift in Sources */,
 				6F4044F72DDF84A000159B14 /* InternalMenuCellType.swift in Sources */,
 				6FE8B42B2DEB5C1B0071E1BC /* UserInfo.swift in Sources */,
+				6F2631BB2DF09F6A009FA0FF /* UserInfoModel.swift in Sources */,
 				6F4045352DDF948E00159B14 /* RoutingSource.swift in Sources */,
 				6F40454A2DDF9AD100159B14 /* InternalMenuSection.swift in Sources */,
 				6F4045422DDF99CF00159B14 /* BuildTargetTogglesDataStore.swift in Sources */,
+				6F2631BE2DF09F6A009FA0FF /* MyInfoViewController.swift in Sources */,
 				6F4045252DDF93C600159B14 /* AppRouting.swift in Sources */,
 				6F4045E22DE7115E00159B14 /* BaseListItemView.swift in Sources */,
 				6F4045AA2DE4566500159B14 /* UpdateMomentLikeSession.swift in Sources */,
@@ -1339,6 +1424,7 @@
 				6F4045DE2DE7112800159B14 /* ListItemView.swift in Sources */,
 				6F4045862DE1A70400159B14 /* Strings.swift in Sources */,
 				6F4045D62DE7101C00159B14 /* BaseTableViewCell.swift in Sources */,
+				6F2631C62DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift in Sources */,
 				6F4045B82DE6255F00159B14 /* PersistentDataStoreType.swift in Sources */,
 				6F4045212DDF939700159B14 /* AppRouter.swift in Sources */,
 				6F4045EC2DE71BDA00159B14 /* MomentListItemViewModel.swift in Sources */,
@@ -1354,10 +1440,12 @@
 				6F4045CE2DE7017300159B14 /* ListViewModel.swift in Sources */,
 				6F2BC31E2BC3AE6E00B3E078 /* AppDelegate.swift in Sources */,
 				6F4045D22DE7017E00159B14 /* ListItemViewModel.swift in Sources */,
+				6F2631B52DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift in Sources */,
 				6F4045172DDF905000159B14 /* Configuration.swift in Sources */,
 				6F4045F02DE71FC700159B14 /* MomentsTimelineViewModel.swift in Sources */,
 				6F4045662DDFA0BC00159B14 /* InternalMenuActionTriggerCell.swift in Sources */,
 				6F4045B32DE6238500159B14 /* MomentsRepo.swift in Sources */,
+				6F2631B22DF09F6A009FA0FF /* MyInfoViewModel.swift in Sources */,
 				6F4045C02DE6266200159B14 /* UserDefaultsPersistentDataStore.swift in Sources */,
 				6F9198EE2DE83EAA0014424E /* BaseResponseModel.swift in Sources */,
 				6F40453A2DDF999400159B14 /* TogglesDataStoreType.swift in Sources */,
@@ -1374,6 +1462,8 @@
 				6F4045DA2DE7111500159B14 /* ListItemCell.swift in Sources */,
 				6F4044FF2DDF874500159B14 /* InternalMenuDescriptionCell.swift in Sources */,
 				6FE8B41F2DEB5C1B0071E1BC /* ChatViewModel.swift in Sources */,
+				6F2631C22DF0A839009FA0FF /* UserInfoUserDefaultsPersistentDataStore.swift in Sources */,
+				6F2631B82DF09F6A009FA0FF /* UserInfoRepo.swift in Sources */,
 				6F4046122DE7686600159B14 /* MomentsTimelineViewController.swift in Sources */,
 				6F4045C52DE6D23500159B14 /* RelativeDateTimeFormatterType.swift in Sources */,
 				6F4045562DDF9B3900159B14 /* InternalMenuCrashAppItemViewModel.swift in Sources */,
@@ -1403,15 +1493,19 @@
 				6F4045B42DE6238500159B14 /* MomentsRepo.swift in Sources */,
 				6FE8B4172DEB5C1B0071E1BC /* DiscoverViewModel.swift in Sources */,
 				6F4045C62DE6D23500159B14 /* RelativeDateTimeFormatterType.swift in Sources */,
+				6F2631C72DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift in Sources */,
 				6F4045A22DE44D3B00159B14 /* GetMomentsByUserIDSession.swift in Sources */,
 				6F4045D32DE7017E00159B14 /* ListItemViewModel.swift in Sources */,
 				6F40453B2DDF999400159B14 /* TogglesDataStoreType.swift in Sources */,
 				6F40460B2DE762F900159B14 /* FirebaseRemoteConfigProvider.swift in Sources */,
+				6F2631B32DF09F6A009FA0FF /* MyInfoViewModel.swift in Sources */,
 				6F4044F42DDF847B00159B14 /* InternalMenuViewController.swift in Sources */,
 				6F4045B92DE6255F00159B14 /* PersistentDataStoreType.swift in Sources */,
+				6F2631B62DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift in Sources */,
 				6F4045ED2DE71BDA00159B14 /* MomentListItemViewModel.swift in Sources */,
 				6F4045FA2DE7620000159B14 /* ABTestProvider.swift in Sources */,
 				6F4045532DDF9B2000159B14 /* InternalMenuDesignKitDemoItemViewModel.swift in Sources */,
+				6F2631BF2DF09F6A009FA0FF /* MyInfoViewController.swift in Sources */,
 				6F40451D2DDF92AA00159B14 /* InternalMenuNavigator.swift in Sources */,
 				6FE8B4292DEB5C1B0071E1BC /* ProfileViewModel.swift in Sources */,
 				6F9198F32DE959F20014424E /* PhotoGridView.swift in Sources */,
@@ -1422,6 +1516,7 @@
 				6F4045BD2DE625C900159B14 /* UserDataStore.swift in Sources */,
 				6F40459C2DE43D9400159B14 /* APISession.swift in Sources */,
 				6F40454B2DDF9AD100159B14 /* InternalMenuSection.swift in Sources */,
+				6F2631B92DF09F6A009FA0FF /* UserInfoRepo.swift in Sources */,
 				6FE8B43C2DEB5D0E0071E1BC /* Contact.swift in Sources */,
 				6F9198EF2DE83EAA0014424E /* BaseResponseModel.swift in Sources */,
 				6F4045E32DE7115E00159B14 /* BaseListItemView.swift in Sources */,
@@ -1454,6 +1549,7 @@
 				6F4046032DE7627300159B14 /* RemoteConfigProvider.swift in Sources */,
 				6F40450A2DDF8A2700159B14 /* BaseViewController.swift in Sources */,
 				6F4045632DDF9BF800159B14 /* DesignKitDemoViewController.swift in Sources */,
+				6F2631C32DF0A839009FA0FF /* UserInfoUserDefaultsPersistentDataStore.swift in Sources */,
 				6F4045A72DE4522B00159B14 /* MomentsDetails.swift in Sources */,
 				6F4045CF2DE7017300159B14 /* ListViewModel.swift in Sources */,
 				6FE8B43F2DEB5D0E0071E1BC /* ContactsViewController.swift in Sources */,
@@ -1469,6 +1565,7 @@
 				6FE8B41A2DEB5C1B0071E1BC /* DiscoverFeature.swift in Sources */,
 				6FE8B4262DEB5C1B0071E1BC /* ChatViewController.swift in Sources */,
 				6F4045362DDF948E00159B14 /* RoutingSource.swift in Sources */,
+				6F2631BC2DF09F6A009FA0FF /* UserInfoModel.swift in Sources */,
 				6F4044FC2DDF853D00159B14 /* InternalMenuItemViewModel.swift in Sources */,
 				6F4045262DDF93C600159B14 /* AppRouting.swift in Sources */,
 				6FE8B4202DEB5C1B0071E1BC /* ChatViewModel.swift in Sources */,
@@ -1498,6 +1595,7 @@
 				6F40452B2DDF93E000159B14 /* Navigating.swift in Sources */,
 				6F4045052DDF87E600159B14 /* InternalMenuDescriptionItemViewModel.swift in Sources */,
 				6F4045912DE1AE6100159B14 /* UIApplicationExtensions.swift in Sources */,
+				6F2631C82DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift in Sources */,
 				6F40459D2DE43D9400159B14 /* APISession.swift in Sources */,
 				6F4045D02DE7017300159B14 /* ListViewModel.swift in Sources */,
 				6FE8B4272DEB5C1B0071E1BC /* ChatViewController.swift in Sources */,
@@ -1507,10 +1605,14 @@
 				6F4045F62DE722A100159B14 /* UserProfileListItemViewModel.swift in Sources */,
 				6F4045A82DE4522B00159B14 /* MomentsDetails.swift in Sources */,
 				6F4045152DDF901300159B14 /* Functions.swift in Sources */,
+				6F2631B42DF09F6A009FA0FF /* MyInfoViewModel.swift in Sources */,
+				6F2631BD2DF09F6A009FA0FF /* UserInfoModel.swift in Sources */,
 				6F4045AC2DE4566500159B14 /* UpdateMomentLikeSession.swift in Sources */,
+				6F2631C42DF0A839009FA0FF /* UserInfoUserDefaultsPersistentDataStore.swift in Sources */,
 				6F40454C2DDF9AD100159B14 /* InternalMenuSection.swift in Sources */,
 				6F4045402DDF99B000159B14 /* InternalTogglesDataStore.swift in Sources */,
 				6F4045272DDF93C600159B14 /* AppRouting.swift in Sources */,
+				6F2631C02DF09F6A009FA0FF /* MyInfoViewController.swift in Sources */,
 				6F4045B02DE5BF1000159B14 /* GetMomentsByUserIDRestful.swift in Sources */,
 				6F4045B52DE6238500159B14 /* MomentsRepo.swift in Sources */,
 				6F4045D82DE7101C00159B14 /* BaseTableViewCell.swift in Sources */,
@@ -1542,6 +1644,7 @@
 				6F4045F22DE71FC700159B14 /* MomentsTimelineViewModel.swift in Sources */,
 				6F4045882DE1A70400159B14 /* Strings.swift in Sources */,
 				6F40453C2DDF999400159B14 /* TogglesDataStoreType.swift in Sources */,
+				6F2631BA2DF09F6A009FA0FF /* UserInfoRepo.swift in Sources */,
 				6F40452F2DDF93F800159B14 /* TransitionType.swift in Sources */,
 				6FE8B43D2DEB5D0E0071E1BC /* Contact.swift in Sources */,
 				6F4046182DE7688D00159B14 /* UserProfileListItemView.swift in Sources */,
@@ -1556,6 +1659,7 @@
 				6FE8B4182DEB5C1B0071E1BC /* DiscoverViewModel.swift in Sources */,
 				6FE8B41E2DEB5C1B0071E1BC /* DiscoverViewController.swift in Sources */,
 				6F40451E2DDF92AA00159B14 /* InternalMenuNavigator.swift in Sources */,
+				6F2631B72DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift in Sources */,
 				6F9198F42DE959F20014424E /* PhotoGridView.swift in Sources */,
 				6FE8B4402DEB5D0E0071E1BC /* ContactsViewController.swift in Sources */,
 			);

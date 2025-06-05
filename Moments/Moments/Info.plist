@@ -48,6 +48,8 @@
     
     <key>NSAppTransportSecurity</key>
     <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
         <key>NSExceptionDomains</key>
         <dict>
             <!-- 针对 localhost 的例外设置 -->
@@ -67,6 +69,8 @@
             <key>192.168.0.100</key>
             <dict>
                 <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+                <key>NSIncludesSubdomains</key>
                 <true/>
             </dict>
             <key>localhost</key>
