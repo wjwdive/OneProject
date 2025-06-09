@@ -114,6 +114,10 @@ PODS:
   - Kingfisher (5.15.6):
     - Kingfisher/Core (= 5.15.6)
   - Kingfisher/Core (5.15.6)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
     - nanopb/encode (= 2.30906.0)
@@ -149,6 +153,7 @@ DEPENDENCIES:
   - Firebase/Performance (= 7.0.0)
   - Firebase/RemoteConfig (= 7.0.0)
   - Kingfisher (= 5.15.6)
+  - Moya (= 14.0.0)
   - Nimble (= 9.0.0)
   - Quick (= 3.0.0)
   - RxBlocking (= 5.1.1)
@@ -180,6 +185,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - Kingfisher
+    - Moya
     - nanopb
     - Nimble
     - PromisesObjC
@@ -218,6 +224,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: d053d902a8edaa9904e1bd00c37535385b8ed152
   GTMSessionFetcher: 5595ec75acf5be50814f81e9189490412bad82ba
   Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
@@ -233,6 +240,6 @@ SPEC CHECKSUMS:
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
 
-PODFILE CHECKSUM: 7b623f72764e112461aa1db15c63fccf7ecd023a
+PODFILE CHECKSUM: fcc92d004f12c9aa2f4dc58c292405b1cf65f813
 
 COCOAPODS: 1.15.2

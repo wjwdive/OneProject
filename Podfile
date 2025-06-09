@@ -21,6 +21,7 @@ def core_pods
   pod 'RxSwift', '= 5.1.1'
   pod 'RxRelay', '= 5.1.1'
   pod 'Alamofire', '= 5.3.0'
+  pod 'Moya', '= 14.0.0'
 end
 
 def thirdparty_pods
