@@ -18,10 +18,12 @@ def dev_pods
 end
 
 def core_pods
-  pod 'RxSwift', '= 5.1.1'
+  pod 'RxSwift', '= 5.1.3'
   pod 'RxRelay', '= 5.1.1'
   pod 'Alamofire', '= 5.3.0'
   pod 'Moya', '= 14.0.0'
+  pod 'Moya/RxSwift', '= 14.0.0'
+  pod 'ObjectMapper', '= 4.4.2'
 end
 
 def thirdparty_pods

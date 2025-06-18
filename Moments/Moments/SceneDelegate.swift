@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.frame = windowScene.coordinateSpace.bounds
         print("H:Q", window?.frame.height ?? 0, " ", window?.frame.width ?? 0)
         // 3. 创建根视图控制器
-        let rootViewController = MyInfoViewController(userId:  "1")////RootNavigationController()
+        let rootViewController = AuthViewController()//MyInfoViewController(userId:  "1")////RootNavigationController()
         
         // 4. 将根控制器分配给窗口
         window?.rootViewController = rootViewController
