@@ -21,6 +21,8 @@ enum AuthAPI {
     case register(username: String, email: String, password: String)
     case deleteUser(id: Int)
     case updateUser(id: Int, userData: [String: Any])
+    case isUsernameAvailable(username: String)
+    case isEmailAvailable(email: String)
 }
 
 extension AuthAPI: TargetType {
@@ -39,6 +41,10 @@ extension AuthAPI: TargetType {
             return "/api/users/register"
         case .login:
             return "/api/users/login"
+        case .isUsernameAvailable:
+            return "/api/users/check-username"
+        case .isEmailAvailable:
+            return "/api/users/check-email"
         case .deleteUser(let id):
             return "/api/users/\(id)"
         case .updateUser(let id, _):
@@ -50,7 +56,7 @@ extension AuthAPI: TargetType {
         switch self {
         case .getUsers, .getUser:
             return .get
-        case .register, .login:
+        case .register, .login, .isUsernameAvailable, .isEmailAvailable:
             return .post
         case .deleteUser:
             return .delete
@@ -62,20 +68,26 @@ extension AuthAPI: TargetType {
     //请求参数
     var task: Task {
         switch self {
-        case .getUsers(let page):
-            return .requestParameters(parameters: ["page": page], encoding: URLEncoding.default)
-        case .getUser, .deleteUser:
-            return .requestPlain
-        case .register(let username, let email, let password):
-            return .requestParameters(parameters:
-                                        ["username" : username, "email": email, "password": password],
-                                  encoding: JSONEncoding.default)
+            case .getUsers(let page):
+                return .requestParameters(parameters: ["page": page], encoding: URLEncoding.default)
+            case .getUser, .deleteUser:
+                return .requestPlain
+            case .register(let username, let email, let password):
+                return .requestParameters(parameters:
+                                            ["username" : username, "email": email, "password": password],
+                                      encoding: JSONEncoding.default)
             
-        case .login(let username, let password):
-            return .requestParameters(parameters: ["username": username, "password": password], encoding: JSONEncoding.default)
-        
-        case .updateUser(_, let userData):
-            return .requestParameters(parameters: userData, encoding: JSONEncoding.default)
+            case .isUsernameAvailable(let username):
+                return .requestParameters(parameters: ["username" : username], encoding: JSONEncoding.default)
+            
+            case .isEmailAvailable(let email):
+                return .requestParameters(parameters: ["email" : email], encoding: JSONEncoding.default)
+            
+            case .login(let username, let password):
+                return .requestParameters(parameters: ["username": username, "password": password], encoding: JSONEncoding.default)
+            
+            case .updateUser(_, let userData):
+                return .requestParameters(parameters: userData, encoding: JSONEncoding.default)
         }
     }
     
@@ -123,6 +135,11 @@ struct UserListData: Codable {
     let users: [User]
     let total: Int
     let page: Int
+}
+
+// MARK: - 用户名或邮箱是否可注册
+struct IsAvailableData: Codable {
+    let available: Bool
 }
 
 // MARK: - Single 扩展
@@ -209,6 +226,18 @@ class AuthService {
     // 注册 - 返回 RegisterData
     func register(username: String, email: String, password: String) -> Single<RegisterData> {
         return request(.register(username: username, email: email, password: password), type: RegisterData.self)
+            .extractData()
+    }
+    
+    // 判断用户名是否被注册 - 返回 isValidData
+    func isUsernameAvailable(username: String) ->Single<IsAvailableData> {
+        return request(.isUsernameAvailable(username: username), type: IsAvailableData.self)
+            .extractData()
+    }
+    
+    // 判断邮箱是否被注册 - 返回 isValidData
+    func isEmailAvailable(email: String) ->Single<IsAvailableData> {
+        return request(.isEmailAvailable(email: email), type: IsAvailableData.self)
             .extractData()
     }
     
