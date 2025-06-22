@@ -23,6 +23,9 @@ enum AuthAPI {
     case updateUser(id: Int, userData: [String: Any])
     case isUsernameAvailable(username: String)
     case isEmailAvailable(email: String)
+    
+    case loginWithPhone(phone: String, captcha: String)
+    
 }
 
 extension AuthAPI: TargetType {
@@ -49,6 +52,8 @@ extension AuthAPI: TargetType {
             return "/api/users/\(id)"
         case .updateUser(let id, _):
             return "/api/users/\(id)"
+        case .loginWithPhone:
+            return "/api/users/loginWithPhone"
         }
     }
     
@@ -56,7 +61,7 @@ extension AuthAPI: TargetType {
         switch self {
         case .getUsers, .getUser:
             return .get
-        case .register, .login, .isUsernameAvailable, .isEmailAvailable:
+        case .register, .login, .isUsernameAvailable, .isEmailAvailable, .loginWithPhone:
             return .post
         case .deleteUser:
             return .delete
@@ -88,6 +93,9 @@ extension AuthAPI: TargetType {
             
             case .updateUser(_, let userData):
                 return .requestParameters(parameters: userData, encoding: JSONEncoding.default)
+            
+            case .loginWithPhone(let phone, let captcha):
+                return .requestParameters(parameters: ["phone": phone, "captcha": captcha], encoding: JSONEncoding.default)
         }
     }
     
@@ -119,6 +127,7 @@ struct User: Codable {
 struct LoginData: Codable {
     let userId: Int
     let username: String
+    let email: String?
     let token: String
     let avatarUrl: String?
 }
@@ -264,6 +273,13 @@ class AuthService {
         return request(.updateUser(id: id, userData: userData), type: User.self)
             .extractData()
     }
+    
+    //手机号登录 - 返回User
+    func loginWithPhone(phone: String, captcha: String) -> Single<User> {
+        return request(.loginWithPhone(phone: phone, captcha: captcha), type: User.self)
+            .extractData()
+    }
+    
 }
 
 // MARK: - 错误处理

@@ -5,144 +5,175 @@ import SnapKit
 
 class LoginViewController: UIViewController {
     private let disposeBag = DisposeBag()
-    private let viewModel = AuthViewModel()
+    private var viewModel = LoginViewModel()
     
     // MARK: - UI Components
-    private lazy var titleLabel: UILabel = {
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
+    
+    private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "登录"
-        label.font = .systemFont(ofSize: 24, weight: .bold)
+        label.text = "欢迎登录"
+        label.font = .systemFont(ofSize: 32, weight: .bold)
         label.textAlignment = .center
         return label
     }()
     
-    private lazy var emailTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "邮箱"
-        textField.borderStyle = .roundedRect
-        textField.autocapitalizationType = .none
-        textField.keyboardType = .emailAddress
-        return textField
+    private let usernameTextField = RoundedTextField()
+    private let usernameErrorLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemRed
+        label.font = .systemFont(ofSize: 12)
+        label.isHidden = true
+        return label
     }()
     
-    private lazy var passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "密码"
-        textField.borderStyle = .roundedRect
-        textField.isSecureTextEntry = true
-        return textField
+    private let passwordTextField = RoundedTextField()
+    private let passwordErrorLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemRed
+        label.font = .systemFont(ofSize: 12)
+        label.isHidden = true
+        return label
     }()
     
-    private lazy var loginButton: UIButton = {
+    private let loginButton = PrimaryButton()
+    
+    private let registerButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("登录", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemBlue
-        button.layer.cornerRadius = 10
+        button.setTitle("没有账号？立即注册", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 14)
         return button
     }()
     
-    private lazy var registerButton: UIButton = {
+    private let forgotPasswordButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("没有账号？点击注册", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
+        button.setTitle("忘记密码？", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 14)
         return button
     }()
+    
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        bindViewModel()
+        setupBindings()
     }
     
     // MARK: - Setup
     private func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
-        // Add subviews
-        view.addSubview(titleLabel)
-        view.addSubview(emailTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(loginButton)
-        view.addSubview(registerButton)
+        // --- Configure Components ---
+        usernameTextField.placeholder = "用户名或邮箱"
+        usernameTextField.keyboardType = .emailAddress
+        usernameTextField.autocapitalizationType = .none
         
-        // Setup constraints using SnapKit
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
-            make.centerX.equalToSuperview()
+        passwordTextField.placeholder = "密码"
+        passwordTextField.isSecureTextEntry = true
+        
+        loginButton.setTitle("登录", for: .normal)
+        
+        activityIndicator.hidesWhenStopped = true
+        
+        // --- Layout ---
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
+        let linksStackView = UIStackView(arrangedSubviews: [registerButton, forgotPasswordButton])
+        linksStackView.axis = .horizontal
+        linksStackView.distribution = .equalSpacing
+        
+        let mainStackView = UIStackView(arrangedSubviews: [
+            titleLabel,
+            usernameTextField,
+            usernameErrorLabel,
+            passwordTextField,
+            passwordErrorLabel,
+            loginButton,
+            linksStackView
+        ])
+        mainStackView.axis = .vertical
+        mainStackView.spacing = 12
+        mainStackView.setCustomSpacing(24, after: passwordErrorLabel)
+        mainStackView.setCustomSpacing(20, after: loginButton)
+        
+        contentView.addSubview(mainStackView)
+        contentView.addSubview(activityIndicator)
+        
+        // --- Constraints with SnapKit ---
+        scrollView.snp.makeConstraints {
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
         
-        emailTextField.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(40)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.height.equalTo(44)
+        contentView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+            // Allow vertical scrolling if content is larger
+            $0.height.equalToSuperview().priority(.low)
         }
         
-        passwordTextField.snp.makeConstraints { make in
-            make.top.equalTo(emailTextField.snp.bottom).offset(20)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.height.equalTo(44)
+        mainStackView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(40)
+            $0.leading.trailing.equalToSuperview().inset(32)
+            $0.bottom.lessThanOrEqualToSuperview().offset(-20)
         }
         
-        loginButton.snp.makeConstraints { make in
-            make.top.equalTo(passwordTextField.snp.bottom).offset(40)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.height.equalTo(44)
+        usernameTextField.snp.makeConstraints {
+            $0.height.equalTo(48)
+        }
+        passwordTextField.snp.makeConstraints {
+            $0.height.equalTo(48)
+        }
+        loginButton.snp.makeConstraints {
+            $0.height.equalTo(50)
         }
         
-        registerButton.snp.makeConstraints { make in
-            make.top.equalTo(loginButton.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
+        activityIndicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
     
-    private func bindViewModel() {
-        // Bind text fields to viewModel
-        emailTextField.rx.text.orEmpty
-            .bind(to: viewModel.email)
+    private func setupBindings() {
+        let input = LoginViewModel.Input(
+            username: usernameTextField.rx.text.orEmpty.asObservable(),
+            password: passwordTextField.rx.text.orEmpty.asObservable(),
+            loginTap: loginButton.rx.tap.asObservable()
+        )
+        //获取输出
+        let output = viewModel.transform(input: input)
+        
+        //绑定输出到UI
+        output.isLoginEnabled
+            .drive(loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        passwordTextField.rx.text.orEmpty
-            .bind(to: viewModel.password)
+        output.isLoading
+            .drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
         
-        // Bind button actions
-        loginButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.viewModel.loginTap
-            })
+        output.errorMessage
+            .drive(usernameErrorLabel.rx.text)
             .disposed(by: disposeBag)
         
-        registerButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                let registerVC = RegisterViewController()
-                self?.present(registerVC, animated: true)
-            })
-            .disposed(by: disposeBag)
-        
-        // Bind viewModel outputs
-        viewModel.authResult
-            .subscribe(onNext: { [weak self] res in
-                // Handle successful login
-//                print("Login successful: \(user.name)")
-                // TODO: Navigate to main screen
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.errorMessage
-            .subscribe(onNext: { [weak self] error in
-                self?.showAlert(message: error)
-            })
-            .disposed(by: disposeBag)
+
+        registerButton.rx.tap.subscribe(onNext: { [weak self] in
+            // Navigate to register screen
+            let registerVC = RegisterViewController() // Assuming this exists
+            self?.navigationController?.pushViewController(registerVC, animated: true)
+        }).disposed(by: disposeBag)
+
+//        viewModel.usernameError
+//            .drive(usernameErrorLabel.rx.text)
+//            .disposed(by: disposeBag)
+//            
+//        viewModel.usernameError
+//            .map { $0 == nil }
+//            .drive(usernameErrorLabel.rx.isHidden)
+//            .disposed(by: disposeBag)
+//        
     }
-    
-    private func showAlert(message: String) {
-        let alert = UIAlertController(title: "错误", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "确定", style: .default))
-        present(alert, animated: true)
-    }
-} 
+}
+
