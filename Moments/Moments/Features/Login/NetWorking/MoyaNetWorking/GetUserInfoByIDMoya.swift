@@ -151,19 +151,7 @@ struct IsAvailableData: Codable {
     let available: Bool
 }
 
-// MARK: - Single 扩展
-extension PrimitiveSequence where Trait == SingleTrait {
-    // 从 BaseResponse 中提取 data
-    func extractData<T>() -> Single<T> where Element == BaseResponse<T> {
-        return self.map { baseResponse in
-            // 检查状态码
-            guard baseResponse.statusCode == 200 else {
-                throw AuthError.apiError(baseResponse.message)
-            }
-            return baseResponse.data
-        }
-    }
-}
+
 
 // MARK: - 网络服务
 class AuthService {
@@ -177,57 +165,91 @@ class AuthService {
     // 通用请求方法
     private func request<T: Codable>(_ target: AuthAPI, type: T.Type) -> Single<BaseResponse<T>> {
         return provider.rx.request(target)
-            .filterSuccessfulStatusCodes()
             .do(onSuccess: { response in
                 print("=== 网络响应调试 ===")
                 print("状态码: \(response.statusCode)")
                 print("响应数据: \(String(data: response.data, encoding: .utf8) ?? "无法解析")")
                 print("==================")
-            })
-            .map(BaseResponse<T>.self)
-            .catchError { error in
+            }, onError: {error in
                 print("=== 网络错误调试 ===")
-//                print("错误类型: \(String(describing: type(of: error)))")
-                print("错误描述: \(error)")
-                print("错误详情: \(error.localizedDescription)")
-                
-                guard let moyaError = error as? MoyaError else {
-                    return .error(error)
-                }
-                
-                switch moyaError {
-                case .statusCode(let response):
-                    print("HTTP状态码: \(response.statusCode)")
-                    if response.statusCode == 401 {
-                        return .error(AuthError.invalidCredentials)
-                    } else if response.statusCode == 422 {
-                        do {
-                            let errors = try response.map([String: [String]].self)
-                            return .error(AuthError.validationFailed(errors))
-                        } catch {
-                            return .error(AuthError.decodingError)
-                        }
-                    } else if response.statusCode == 409 {
-                        return .error(AuthError.emailAlreadyExists)
-                    } else {
-                        return .error(AuthError.serverError)
+                print(error.localizedDescription)
+                if let moyaError = error as? MoyaError {
+                    switch moyaError {
+                    case .statusCode(let response):
+                        print("HTTP错误: \(response.statusCode)")
+                    case .underlying(let underlyingError, _):
+                        print("底层错误: \(underlyingError)")
+                    default:
+                        print("其他 MoyaError 类型: \(moyaError)")
                     }
-                case .underlying(let underlyingError, _):
-                    print("底层错误: \(underlyingError)")
-                    return .error(AuthError.networkError)
-                case .objectMapping(let decodingError, let response):
-                    print("对象映射错误: \(decodingError)")
-                    print("响应数据: \(String(data: response.data, encoding: .utf8) ?? "无法解析")")
-                    return .error(AuthError.decodingError)
-                default:
-                    print("其他 MoyaError 类型")
-                    return .error(error)
                 }
+                print("==================")
+            })
+            .flatMap { response -> Single<BaseResponse<T>> in
+                //统一处理所有响应
+                let statusCode = response.statusCode
+                //检查Http状态码
+                guard (200...299).contains(statusCode) else {
+                    // 非2xx状态码抛出包含完整响应的错误
+                    let responseBody = String(data: response.data, encoding: .utf8) ?? "无响应体"
+                    let detail = "HTTP错误 \(statusCode): \(responseBody)"
+                    throw AppError.serverError(statusCode: statusCode, detail: detail)
+                }
+                //尝试解码业务响应
+                do {
+                    let baseResponse =  try response.map(BaseResponse<T>.self)
+                    return .just(baseResponse)
+                } catch {
+                    //解码失败，抛出解析错误
+                    let responseBody = String(data: response.data, encoding: .utf8) ?? "无法解析"
+                    let detail = "解析错误: \(error)\n原始响应: \(responseBody)"
+                    throw AppError.decodingError.withDetail(detail)
+                }
+            }
+            .catchError { error -> Single<BaseResponse<T>> in
+                //处理 Moya 底层错误
+                if let moyaError = error as? MoyaError {
+                    switch moyaError {
+                    case .statusCode(let response):
+                        // 这里应该不会执行，因为上面已经处理了所有状态码
+                        let statusCode = response.statusCode
+                        let responseBody = String(data: response.data, encoding: .utf8) ?? "无响应体"
+                        let detail = "Moya HTTP错误 \(statusCode): \(responseBody)"
+                        return .error(AppError.serverError(statusCode: statusCode, detail: detail))
+                        
+                    case .underlying(let underlyingError, _):
+                        let detail = "底层错误: \(underlyingError)"
+                        return .error(AppError.networkError.withDetail(detail))
+                        
+                    case .objectMapping(let decodingError, let response):
+                        let responseBody = String(data: response.data, encoding: .utf8) ?? "无法解析"
+                        let detail = "对象映射错误: \(decodingError)\n原始响应: \(responseBody)"
+                        return .error(AppError.decodingError.withDetail(detail))
+                        
+                    default:
+                        let detail = "Moya未知错误: \(moyaError)"
+                        return .error(AppError.networkError.withDetail(detail))
+                    
+                    }
+                }
+                // 如果不是 MoyaError，而是我们之前抛出的 AppError，直接传递
+                if let networkError = error as? AppError {
+                    return .error(networkError)
+                }
+                //其他未知错误
+                let detail = "未处理错误: \(error)"
+                return .error(AppError.networkError.withDetail(detail))
             }
     }
     
     // 登录 - 返回 LoginData
-    func login(username: String, password: String) -> Single<LoginData> {
+    func login(username: String, password: String) -> Single<BaseResponse<LoginData>> {
+        return request(.login(username: username, password: password), type: LoginData.self)
+            .extractBaseResponse()
+    }
+    
+    // 登录 - 返回 LoginData
+    func loginGetData(username: String, password: String) -> Single<LoginData> {
         return request(.login(username: username, password: password), type: LoginData.self)
             .extractData()
     }
@@ -309,5 +331,84 @@ enum AuthError: Error {
         case .apiError(let message):
             return message
         }
+    }
+}
+
+
+// 定义错误类型
+enum NetworkError: Error {
+    case serverError(response: Response)  // 包含原始响应
+    case decodingError(response: Response, underlyingError: Error)
+    case connectionError(Error)
+    case unknownError
+    
+    // 错误描述
+    var localizedDescription: String {
+        switch self {
+        case .serverError(let response):
+            return "服务器错误 (\(response.statusCode))"
+        case .decodingError(_, let error):
+            return "数据解析失败: \(error.localizedDescription)"
+        case .connectionError(let error):
+            return "网络连接错误: \(error.localizedDescription)"
+        case .unknownError:
+            return "未知错误"
+        }
+    }
+    
+    // 原始响应数据
+    var responseData: Data? {
+        switch self {
+        case .serverError(let response), .decodingError(let response, _):
+            return response.data
+        default:
+            return nil
+        }
+    }
+    
+    // HTTP 状态码
+    var statusCode: Int? {
+        switch self {
+        case .serverError(let response):
+            return response.statusCode
+        default:
+            return nil
+        }
+    }
+}
+
+// MARK: - 定义业务错误类型
+enum BusinessError: Error {
+    case apiError(statusCode: Int, message: String)
+    
+    var localizedDescription: String {
+        switch self {
+            case .apiError(let statusCode, let message):
+                return "业务错误 [\(statusCode)]: \(message)"
+        }
+    }
+}
+
+// MARK: - Single 扩展
+//返回 data段
+extension PrimitiveSequence where Trait == SingleTrait {
+    // 从 BaseResponse 中提取 data
+    func extractData<T>() -> Single<T> where Element == BaseResponse<T> {
+        return self.map { baseResponse in
+            guard let data = baseResponse.data else {
+                throw BusinessError.apiError(
+                    statusCode: baseResponse.statusCode,
+                    message: baseResponse.message
+                )
+            }
+            return data
+        }
+    }
+}
+
+//返回 整个 BaseResponse
+extension PrimitiveSequence where Trait == SingleTrait {
+    func extractBaseResponse<T>() -> Single<BaseResponse<T>> where Element == BaseResponse<T> {
+        return self // 直接返回，不做 data 提取
     }
 }

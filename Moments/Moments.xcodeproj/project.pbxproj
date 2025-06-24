@@ -275,6 +275,12 @@
 		6F9198F22DE959F20014424E /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9198F12DE959F20014424E /* PhotoGridView.swift */; };
 		6F9198F32DE959F20014424E /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9198F12DE959F20014424E /* PhotoGridView.swift */; };
 		6F9198F42DE959F20014424E /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9198F12DE959F20014424E /* PhotoGridView.swift */; };
+		6F9DBFE62E0AAE12007EC26E /* RootNavNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9DBFE52E0AAE11007EC26E /* RootNavNavigator.swift */; };
+		6F9DBFE72E0AAE12007EC26E /* RootNavNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9DBFE52E0AAE11007EC26E /* RootNavNavigator.swift */; };
+		6F9DBFE82E0AAE12007EC26E /* RootNavNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9DBFE52E0AAE11007EC26E /* RootNavNavigator.swift */; };
+		6F9DBFEA2E0B0BBC007EC26E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9DBFE92E0B0BBC007EC26E /* AppError.swift */; };
+		6F9DBFEB2E0B0BBC007EC26E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9DBFE92E0B0BBC007EC26E /* AppError.swift */; };
+		6F9DBFEC2E0B0BBC007EC26E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9DBFE92E0B0BBC007EC26E /* AppError.swift */; };
 		6FBE223F2DDCA27000ACFB72 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE223E2DDCA27000ACFB72 /* Launch Screen.storyboard */; };
 		6FBE22432DDCA2A600ACFB72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE22422DDCA2A600ACFB72 /* Main.storyboard */; };
 		6FBE22442DDCA2A600ACFB72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE22422DDCA2A600ACFB72 /* Main.storyboard */; };
@@ -288,6 +294,27 @@
 		6FDEAEEE2E057D2E00901533 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEED2E057D2E00901533 /* LoginViewModel.swift */; };
 		6FDEAEEF2E057D2E00901533 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEED2E057D2E00901533 /* LoginViewModel.swift */; };
 		6FDEAEF02E057D2E00901533 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEED2E057D2E00901533 /* LoginViewModel.swift */; };
+		6FDEAEF22E09554F00901533 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEF12E09554F00901533 /* ForgotPasswordViewController.swift */; };
+		6FDEAEF32E09554F00901533 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEF12E09554F00901533 /* ForgotPasswordViewController.swift */; };
+		6FDEAEF42E09554F00901533 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEF12E09554F00901533 /* ForgotPasswordViewController.swift */; };
+		6FDEAEF72E09880800901533 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEF62E09880800901533 /* LoginNavigator.swift */; };
+		6FDEAEF82E09880800901533 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEF62E09880800901533 /* LoginNavigator.swift */; };
+		6FDEAEF92E09880800901533 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEF62E09880800901533 /* LoginNavigator.swift */; };
+		6FDEAEFB2E09881F00901533 /* RegisterNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEFA2E09881F00901533 /* RegisterNavigator.swift */; };
+		6FDEAEFC2E09881F00901533 /* RegisterNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEFA2E09881F00901533 /* RegisterNavigator.swift */; };
+		6FDEAEFD2E09881F00901533 /* RegisterNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEFA2E09881F00901533 /* RegisterNavigator.swift */; };
+		6FDEAEFF2E09883D00901533 /* ForgotPasswordNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEFE2E09883D00901533 /* ForgotPasswordNavigator.swift */; };
+		6FDEAF002E09883D00901533 /* ForgotPasswordNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEFE2E09883D00901533 /* ForgotPasswordNavigator.swift */; };
+		6FDEAF012E09883D00901533 /* ForgotPasswordNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAEFE2E09883D00901533 /* ForgotPasswordNavigator.swift */; };
+		6FDEAF032E09963600901533 /* RouterPathConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAF022E09963600901533 /* RouterPathConfig.swift */; };
+		6FDEAF042E09963600901533 /* RouterPathConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAF022E09963600901533 /* RouterPathConfig.swift */; };
+		6FDEAF052E09963600901533 /* RouterPathConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAF022E09963600901533 /* RouterPathConfig.swift */; };
+		6FDEAF072E09A5AA00901533 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAF062E09A5AA00901533 /* RegisterViewModel.swift */; };
+		6FDEAF082E09A5AA00901533 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAF062E09A5AA00901533 /* RegisterViewModel.swift */; };
+		6FDEAF092E09A5AA00901533 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAF062E09A5AA00901533 /* RegisterViewModel.swift */; };
+		6FDEAF0B2E09A8FD00901533 /* BaseAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAF0A2E09A8FD00901533 /* BaseAuthViewModel.swift */; };
+		6FDEAF0C2E09A8FD00901533 /* BaseAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAF0A2E09A8FD00901533 /* BaseAuthViewModel.swift */; };
+		6FDEAF0D2E09A8FD00901533 /* BaseAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEAF0A2E09A8FD00901533 /* BaseAuthViewModel.swift */; };
 		6FE8B4132DEB5C1B0071E1BC /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE8B3FC2DEB5C1B0071E1BC /* RootNavigationController.swift */; };
 		6FE8B4142DEB5C1B0071E1BC /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE8B3FC2DEB5C1B0071E1BC /* RootNavigationController.swift */; };
 		6FE8B4152DEB5C1B0071E1BC /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE8B3FC2DEB5C1B0071E1BC /* RootNavigationController.swift */; };
@@ -457,11 +484,20 @@
 		6F6AEEEE2DDC89AE0008EA8D /* AppStoreTarget.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStoreTarget.xcconfig; sourceTree = "<group>"; };
 		6F9198ED2DE83EAA0014424E /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
 		6F9198F12DE959F20014424E /* PhotoGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoGridView.swift; path = Moments/Features/Moments/Views/PhotoGridView.swift; sourceTree = SOURCE_ROOT; };
+		6F9DBFE52E0AAE11007EC26E /* RootNavNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavNavigator.swift; sourceTree = "<group>"; };
+		6F9DBFE92E0B0BBC007EC26E /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		6FBE223E2DDCA27000ACFB72 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		6FBE22422DDCA2A600ACFB72 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6FDEAEE52E02867D00901533 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		6FDEAEE92E028F9000901533 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		6FDEAEED2E057D2E00901533 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6FDEAEF12E09554F00901533 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		6FDEAEF62E09880800901533 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
+		6FDEAEFA2E09881F00901533 /* RegisterNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNavigator.swift; sourceTree = "<group>"; };
+		6FDEAEFE2E09883D00901533 /* ForgotPasswordNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordNavigator.swift; sourceTree = "<group>"; };
+		6FDEAF022E09963600901533 /* RouterPathConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterPathConfig.swift; sourceTree = "<group>"; };
+		6FDEAF062E09A5AA00901533 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		6FDEAF0A2E09A8FD00901533 /* BaseAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuthViewModel.swift; sourceTree = "<group>"; };
 		6FE8B3FC2DEB5C1B0071E1BC /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		6FE8B4002DEB5C1B0071E1BC /* DiscoverViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
 		6FE8B4022DEB5C1B0071E1BC /* DiscoverFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverFeature.swift; sourceTree = "<group>"; };
@@ -580,6 +616,7 @@
 			isa = PBXGroup;
 			children = (
 				6F2631C92DF9C9FB009FA0FF /* GetUserInfoByIDMoya.swift */,
+				6F9DBFE92E0B0BBC007EC26E /* AppError.swift */,
 			);
 			path = MoyaNetWorking;
 			sourceTree = "<group>";
@@ -587,6 +624,7 @@
 		6F2631CE2E007AE6009FA0FF /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				6FDEAEF52E0987E000901533 /* Routing */,
 				6F2631D32E007B28009FA0FF /* Models */,
 				6F2631D22E007B1A009FA0FF /* Repositories */,
 				6F2631D12E007B0A009FA0FF /* NetWorking */,
@@ -601,6 +639,8 @@
 			children = (
 				6F2631D82E00818E009FA0FF /* AuthViewModel.swift */,
 				6FDEAEED2E057D2E00901533 /* LoginViewModel.swift */,
+				6FDEAF062E09A5AA00901533 /* RegisterViewModel.swift */,
+				6FDEAF0A2E09A8FD00901533 /* BaseAuthViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -610,6 +650,7 @@
 			children = (
 				6F2631DC2E00819A009FA0FF /* LoginViewController.swift */,
 				6F2631DD2E00819A009FA0FF /* RegisterViewController.swift */,
+				6FDEAEF12E09554F00901533 /* ForgotPasswordViewController.swift */,
 				6FDEAEE52E02867D00901533 /* AuthViewController.swift */,
 				6FDEAEE92E028F9000901533 /* MyProfileViewController.swift */,
 			);
@@ -810,6 +851,7 @@
 		6F40451A2DDF928A00159B14 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				6FDEAF022E09963600901533 /* RouterPathConfig.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -1019,9 +1061,28 @@
 			path = FireBase;
 			sourceTree = "<group>";
 		};
+		6F9DBFE42E0AADED007EC26E /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				6F9DBFE52E0AAE11007EC26E /* RootNavNavigator.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		6FDEAEF52E0987E000901533 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				6FDEAEF62E09880800901533 /* LoginNavigator.swift */,
+				6FDEAEFA2E09881F00901533 /* RegisterNavigator.swift */,
+				6FDEAEFE2E09883D00901533 /* ForgotPasswordNavigator.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 		6FE8B3FB2DEB5C1B0071E1BC /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				6F9DBFE42E0AADED007EC26E /* Routing */,
 				6FE8B3FC2DEB5C1B0071E1BC /* RootNavigationController.swift */,
 			);
 			name = Navigation;
@@ -1495,6 +1556,8 @@
 				6FE8B43E2DEB5D0E0071E1BC /* ContactsViewController.swift in Sources */,
 				6FE8B4192DEB5C1B0071E1BC /* DiscoverFeature.swift in Sources */,
 				6F4045E82DE713BE00159B14 /* MomentListItemView.swift in Sources */,
+				6FDEAEFB2E09881F00901533 /* RegisterNavigator.swift in Sources */,
+				6FDEAF0B2E09A8FD00901533 /* BaseAuthViewModel.swift in Sources */,
 				6F4044F72DDF84A000159B14 /* InternalMenuCellType.swift in Sources */,
 				6FE8B42B2DEB5C1B0071E1BC /* UserInfo.swift in Sources */,
 				6F2631BB2DF09F6A009FA0FF /* UserInfoModel.swift in Sources */,
@@ -1517,12 +1580,14 @@
 				6F4045BC2DE625C900159B14 /* UserDataStore.swift in Sources */,
 				6F40454E2DDF9B0500159B14 /* InternalMenuFeatureToggleItemViewModel.swift in Sources */,
 				6FE8B43B2DEB5D0E0071E1BC /* Contact.swift in Sources */,
+				6FDEAEF22E09554F00901533 /* ForgotPasswordViewController.swift in Sources */,
 				6F40460E2DE7642800159B14 /* FirebaseRemoteTogglesDataStore.swift in Sources */,
 				6F2BC3222BC3AE6E00B3E078 /* ViewController.swift in Sources */,
 				6F4045DE2DE7112800159B14 /* ListItemView.swift in Sources */,
 				6F4045862DE1A70400159B14 /* Strings.swift in Sources */,
 				6F4045D62DE7101C00159B14 /* BaseTableViewCell.swift in Sources */,
 				6F2631C62DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift in Sources */,
+				6F9DBFE62E0AAE12007EC26E /* RootNavNavigator.swift in Sources */,
 				6F4045B82DE6255F00159B14 /* PersistentDataStoreType.swift in Sources */,
 				6F4045212DDF939700159B14 /* AppRouter.swift in Sources */,
 				6F4045EC2DE71BDA00159B14 /* MomentListItemViewModel.swift in Sources */,
@@ -1540,10 +1605,13 @@
 				6F2BC31E2BC3AE6E00B3E078 /* AppDelegate.swift in Sources */,
 				6F4045D22DE7017E00159B14 /* ListItemViewModel.swift in Sources */,
 				6F2631B52DF09F6A009FA0FF /* GetUserInfoByUserIdRestful.swift in Sources */,
+				6FDEAF072E09A5AA00901533 /* RegisterViewModel.swift in Sources */,
 				6F4045172DDF905000159B14 /* Configuration.swift in Sources */,
+				6FDEAEF72E09880800901533 /* LoginNavigator.swift in Sources */,
 				6F2631DE2E00819A009FA0FF /* LoginViewController.swift in Sources */,
 				6F4045F02DE71FC700159B14 /* MomentsTimelineViewModel.swift in Sources */,
 				6F4045662DDFA0BC00159B14 /* InternalMenuActionTriggerCell.swift in Sources */,
+				6FDEAF032E09963600901533 /* RouterPathConfig.swift in Sources */,
 				6F4045B32DE6238500159B14 /* MomentsRepo.swift in Sources */,
 				6F2631B22DF09F6A009FA0FF /* MyInfoViewModel.swift in Sources */,
 				6F4045C02DE6266200159B14 /* UserDefaultsPersistentDataStore.swift in Sources */,
@@ -1575,11 +1643,13 @@
 				6F4045032DDF87E600159B14 /* InternalMenuDescriptionItemViewModel.swift in Sources */,
 				6F4044FB2DDF853D00159B14 /* InternalMenuItemViewModel.swift in Sources */,
 				6F2631E12E00819A009FA0FF /* RegisterViewController.swift in Sources */,
+				6FDEAEFF2E09883D00901533 /* ForgotPasswordNavigator.swift in Sources */,
 				6F4045522DDF9B2000159B14 /* InternalMenuDesignKitDemoItemViewModel.swift in Sources */,
 				6F4045462DDF9A9B00159B14 /* InternalMenuViewModel.swift in Sources */,
 				6F40460A2DE762F900159B14 /* FirebaseRemoteConfigProvider.swift in Sources */,
 				6FE8B4132DEB5C1B0071E1BC /* RootNavigationController.swift in Sources */,
 				6F4045622DDF9BF800159B14 /* DesignKitDemoViewController.swift in Sources */,
+				6F9DBFEA2E0B0BBC007EC26E /* AppError.swift in Sources */,
 				6F4045AE2DE5BF0F00159B14 /* GetMomentsByUserIDRestful.swift in Sources */,
 				6F4045F42DE722A100159B14 /* UserProfileListItemViewModel.swift in Sources */,
 				6F4045F92DE7620000159B14 /* ABTestProvider.swift in Sources */,
@@ -1598,6 +1668,7 @@
 				6FE8B4172DEB5C1B0071E1BC /* DiscoverViewModel.swift in Sources */,
 				6F4045C62DE6D23500159B14 /* RelativeDateTimeFormatterType.swift in Sources */,
 				6F2631C72DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift in Sources */,
+				6FDEAEF82E09880800901533 /* LoginNavigator.swift in Sources */,
 				6FDEAEE72E02867D00901533 /* AuthViewController.swift in Sources */,
 				6F4045A22DE44D3B00159B14 /* GetMomentsByUserIDSession.swift in Sources */,
 				6F4045D32DE7017E00159B14 /* ListItemViewModel.swift in Sources */,
@@ -1616,6 +1687,7 @@
 				6F2631DA2E00818E009FA0FF /* AuthViewModel.swift in Sources */,
 				6F9198F32DE959F20014424E /* PhotoGridView.swift in Sources */,
 				6F4045902DE1AE6100159B14 /* UIApplicationExtensions.swift in Sources */,
+				6FDEAEF32E09554F00901533 /* ForgotPasswordViewController.swift in Sources */,
 				6F4045872DE1A70400159B14 /* Strings.swift in Sources */,
 				6F4045D72DE7101C00159B14 /* BaseTableViewCell.swift in Sources */,
 				6F40453F2DDF99B000159B14 /* InternalTogglesDataStore.swift in Sources */,
@@ -1639,13 +1711,18 @@
 				6F4044F82DDF84A000159B14 /* InternalMenuCellType.swift in Sources */,
 				6FE8B4482DEB5D8D0071E1BC /* BaseViewModel.swift in Sources */,
 				6F2BC3352BC3AE7300B3E078 /* MomentsTests.swift in Sources */,
+				6FDEAF0C2E09A8FD00901533 /* BaseAuthViewModel.swift in Sources */,
+				6FDEAF082E09A5AA00901533 /* RegisterViewModel.swift in Sources */,
 				6F4045DB2DE7111500159B14 /* ListItemCell.swift in Sources */,
 				6F4045432DDF99CF00159B14 /* BuildTargetTogglesDataStore.swift in Sources */,
 				6F4045F52DE722A100159B14 /* UserProfileListItemViewModel.swift in Sources */,
 				6F40452E2DDF93F800159B14 /* TransitionType.swift in Sources */,
+				6FDEAF042E09963600901533 /* RouterPathConfig.swift in Sources */,
 				6F4045F12DE71FC700159B14 /* MomentsTimelineViewModel.swift in Sources */,
 				6FE8B4142DEB5C1B0071E1BC /* RootNavigationController.swift in Sources */,
 				6F4045CA2DE700EC00159B14 /* BaseTableViewController.swift in Sources */,
+				6FDEAF002E09883D00901533 /* ForgotPasswordNavigator.swift in Sources */,
+				6FDEAEFC2E09881F00901533 /* RegisterNavigator.swift in Sources */,
 				6F4045C12DE6266200159B14 /* UserDefaultsPersistentDataStore.swift in Sources */,
 				6F4045182DDF905000159B14 /* Configuration.swift in Sources */,
 				6F4045AF2DE5BF0F00159B14 /* GetMomentsByUserIDRestful.swift in Sources */,
@@ -1677,6 +1754,8 @@
 				6FE8B41A2DEB5C1B0071E1BC /* DiscoverFeature.swift in Sources */,
 				6FE8B4262DEB5C1B0071E1BC /* ChatViewController.swift in Sources */,
 				6F4045362DDF948E00159B14 /* RoutingSource.swift in Sources */,
+				6F9DBFEB2E0B0BBC007EC26E /* AppError.swift in Sources */,
+				6F9DBFE72E0AAE12007EC26E /* RootNavNavigator.swift in Sources */,
 				6F2631BC2DF09F6A009FA0FF /* UserInfoModel.swift in Sources */,
 				6F4044FC2DDF853D00159B14 /* InternalMenuItemViewModel.swift in Sources */,
 				6F4045262DDF93C600159B14 /* AppRouting.swift in Sources */,
@@ -1709,6 +1788,8 @@
 				6F4045052DDF87E600159B14 /* InternalMenuDescriptionItemViewModel.swift in Sources */,
 				6F4045912DE1AE6100159B14 /* UIApplicationExtensions.swift in Sources */,
 				6F2631C82DF0A891009FA0FF /* UserInfoPersistentDataStoreType.swift in Sources */,
+				6FDEAEF92E09880800901533 /* LoginNavigator.swift in Sources */,
+				6FDEAF0D2E09A8FD00901533 /* BaseAuthViewModel.swift in Sources */,
 				6F40459D2DE43D9400159B14 /* APISession.swift in Sources */,
 				6F4045D02DE7017300159B14 /* ListViewModel.swift in Sources */,
 				6FE8B4272DEB5C1B0071E1BC /* ChatViewController.swift in Sources */,
@@ -1726,7 +1807,9 @@
 				6F40454C2DDF9AD100159B14 /* InternalMenuSection.swift in Sources */,
 				6F4045402DDF99B000159B14 /* InternalTogglesDataStore.swift in Sources */,
 				6F4045272DDF93C600159B14 /* AppRouting.swift in Sources */,
+				6FDEAF092E09A5AA00901533 /* RegisterViewModel.swift in Sources */,
 				6F2631C02DF09F6A009FA0FF /* MyInfoViewController.swift in Sources */,
+				6FDEAF052E09963600901533 /* RouterPathConfig.swift in Sources */,
 				6F4045B02DE5BF1000159B14 /* GetMomentsByUserIDRestful.swift in Sources */,
 				6F4045B52DE6238500159B14 /* MomentsRepo.swift in Sources */,
 				6F2631D72E008182009FA0FF /* LoginModel.swift in Sources */,
@@ -1734,6 +1817,7 @@
 				6F4044F92DDF84A000159B14 /* InternalMenuCellType.swift in Sources */,
 				6F4045482DDF9A9B00159B14 /* InternalMenuViewModel.swift in Sources */,
 				6F4045372DDF948E00159B14 /* RoutingSource.swift in Sources */,
+				6F9DBFEC2E0B0BBC007EC26E /* AppError.swift in Sources */,
 				6F2BC3412BC3AE7300B3E078 /* MomentsUITestsLaunchTests.swift in Sources */,
 				6F4045DC2DE7111500159B14 /* ListItemCell.swift in Sources */,
 				6FE8B42A2DEB5C1B0071E1BC /* ProfileViewModel.swift in Sources */,
@@ -1759,6 +1843,8 @@
 				6FE8B41B2DEB5C1B0071E1BC /* DiscoverFeature.swift in Sources */,
 				6F4045C22DE6266200159B14 /* UserDefaultsPersistentDataStore.swift in Sources */,
 				6FE8B4152DEB5C1B0071E1BC /* RootNavigationController.swift in Sources */,
+				6FDEAEFD2E09881F00901533 /* RegisterNavigator.swift in Sources */,
+				6FDEAF012E09883D00901533 /* ForgotPasswordNavigator.swift in Sources */,
 				6F4045F22DE71FC700159B14 /* MomentsTimelineViewModel.swift in Sources */,
 				6F4045882DE1A70400159B14 /* Strings.swift in Sources */,
 				6F40453C2DDF999400159B14 /* TogglesDataStoreType.swift in Sources */,
@@ -1769,7 +1855,9 @@
 				6F4045232DDF939700159B14 /* AppRouter.swift in Sources */,
 				6F40455C2DDF9B5600159B14 /* InternalMenuActionTriggerItemViewModel.swift in Sources */,
 				6F40458C2DE1ABB000159B14 /* DesignKitDemoNavigator.swift in Sources */,
+				6F9DBFE82E0AAE12007EC26E /* RootNavNavigator.swift in Sources */,
 				6F4045A32DE44D3B00159B14 /* GetMomentsByUserIDSession.swift in Sources */,
+				6FDEAEF42E09554F00901533 /* ForgotPasswordViewController.swift in Sources */,
 				6F4045EA2DE713BE00159B14 /* MomentListItemView.swift in Sources */,
 				6F4045192DDF905000159B14 /* Configuration.swift in Sources */,
 				6F4045992DE43D8600159B14 /* API.swift in Sources */,

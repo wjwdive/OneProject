@@ -8,7 +8,7 @@
 import Foundation
 
 struct BaseResponse<T: Codable>: Codable {
-    let data: T
+    let data: T?
     let statusCode: Int
     let message: String
 }

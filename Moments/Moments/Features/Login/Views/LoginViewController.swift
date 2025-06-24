@@ -6,6 +6,7 @@ import SnapKit
 class LoginViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private var viewModel = LoginViewModel()
+    let router: AppRouting = AppRouter.shared
     
     // MARK: - UI Components
     private let scrollView = UIScrollView()
@@ -30,6 +31,15 @@ class LoginViewController: UIViewController {
     
     private let passwordTextField = RoundedTextField()
     private let passwordErrorLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemRed
+        label.font = .systemFont(ofSize: 12)
+        label.isHidden = true
+        return label
+    }()
+    
+    private let confirmPasswordTextField = RoundedTextField()
+    private let confirmPasswordErrorLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemRed
         label.font = .systemFont(ofSize: 12)
@@ -67,8 +77,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         // --- Configure Components ---
-        usernameTextField.placeholder = "用户名或邮箱"
-        usernameTextField.keyboardType = .emailAddress
+        usernameTextField.placeholder = "用户名"
         usernameTextField.autocapitalizationType = .none
         
         passwordTextField.placeholder = "密码"
@@ -122,11 +131,13 @@ class LoginViewController: UIViewController {
         }
         
         usernameTextField.snp.makeConstraints {
-            $0.height.equalTo(48)
+            $0.height.equalTo(44)
         }
+        
         passwordTextField.snp.makeConstraints {
-            $0.height.equalTo(48)
+            $0.height.equalTo(44)
         }
+        
         loginButton.snp.makeConstraints {
             $0.height.equalTo(50)
         }
@@ -137,10 +148,13 @@ class LoginViewController: UIViewController {
     }
     
     private func setupBindings() {
+        // 绑定输入
         let input = LoginViewModel.Input(
             username: usernameTextField.rx.text.orEmpty.asObservable(),
             password: passwordTextField.rx.text.orEmpty.asObservable(),
-            loginTap: loginButton.rx.tap.asObservable()
+            loginTap: loginButton.rx.tap.asObservable(),
+            registerTap: registerButton.rx.tap.asObservable(),
+            forgotPasswordTap: forgotPasswordButton.rx.tap.asObservable()
         )
         //获取输出
         let output = viewModel.transform(input: input)
@@ -154,26 +168,67 @@ class LoginViewController: UIViewController {
             .drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
         
-        output.errorMessage
+        output.usernameError
             .drive(usernameErrorLabel.rx.text)
             .disposed(by: disposeBag)
+            
+        output.usernameError
+            .map { $0 == nil }
+            .drive(usernameErrorLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+
+        output.passwordError
+            .drive(passwordErrorLabel.rx.text)
+            .disposed(by: disposeBag)
         
+        output.passwordError
+            .map{ $0 == nil }
+            .drive(passwordErrorLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        output.loginResult
+            .drive(onNext: { [weak self] result in
+                switch result {
+                case .success(let user):
+                    print("登录成功: \(user.username)")
+                    // 登录成功后，切换根控制器
+                    let baseNav = RootNavigationController()
+                    UIApplication.shared.windows.first?.rootViewController = baseNav
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                case .failure(let error):
+                    self?.showAlert(message: error.localizedDescription)
+                }
+            })
+            .disposed(by: disposeBag)
 
-        registerButton.rx.tap.subscribe(onNext: { [weak self] in
-            // Navigate to register screen
-            let registerVC = RegisterViewController() // Assuming this exists
-            self?.navigationController?.pushViewController(registerVC, animated: true)
-        }).disposed(by: disposeBag)
 
-//        viewModel.usernameError
-//            .drive(usernameErrorLabel.rx.text)
-//            .disposed(by: disposeBag)
-//            
-//        viewModel.usernameError
-//            .map { $0 == nil }
-//            .drive(usernameErrorLabel.rx.isHidden)
-//            .disposed(by: disposeBag)
-//        
+        registerButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.router.route(to: URL(string: "\(UniversalLinks.baseURL)\(routerPath.RegisterView)"), from: self, using: .present)
+                //push方式
+//                self?.navigationController?.pushViewController(registerVC, animated: true)
+                    //present方式
+//                self?.present(registerVC, animated: true, completion: {
+//
+//                })
+            })
+            .disposed(by: disposeBag)
+
+        forgotPasswordButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                //统一路由方式
+                self?.router.route(to: URL(string: "\(UniversalLinks.baseURL)\(routerPath.ForgotPasswordView)"), from: self, using: .show)
+            })
+            .disposed(by: disposeBag)
+
+        
     }
+
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "登录失败", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "确定", style: .default))
+        present(alert, animated: true)
+    }
+
 }
 

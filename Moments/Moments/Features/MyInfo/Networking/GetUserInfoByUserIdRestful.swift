@@ -58,6 +58,11 @@ struct GetUserInfoByUserIdRestful: GetUserInfoByUserIDSessionType {
                     print("GetUserInfoByUserIdRestful: AFError details: \(afError)")
                 }
             })
-            .map { $0.data }
+            .map { response in
+                guard let data = response.data else {
+                    throw AuthError.serverError // 或自定义“无数据”错误
+                }
+                return data
+            }
     }
 }

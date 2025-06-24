@@ -10,15 +10,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 import Moya
-import simd
-
-
-protocol ViewModelType {
-    associatedtype Input
-    associatedtype Output
-    
-    func transform(input: Input) -> Output
-}
 
 enum AuthMode {
     case login
@@ -47,34 +38,6 @@ struct AuthState {
 }
 
 
-class BaseAuthViewModel {
-    //公共状态
-    let isLoading = BehaviorRelay(value: false)
-    let errorMessage = PublishRelay<String?>()
-    
-    let authService = AuthService()
-    let disposeBag = DisposeBag()
-    
-    //公共方法
-    func handleError(_ error: Error) {
-        errorMessage.accept(error.localizedDescription)
-        isLoading.accept(false)
-    }
-    
-    // 公共验证逻辑
-    func validateEmail(_ email: String) -> Bool {
-        // 邮箱验证逻辑
-        return true
-    }
-    
-    func validatePhone(_ phone: String) -> Bool {
-        // 手机号验证逻辑
-        return true
-    }
-    
-}
-
-
 //登录viewModel(继承基础类)
 class LoginViewModel: BaseAuthViewModel, ViewModelType {
     enum LoginMethod{
@@ -86,8 +49,10 @@ class LoginViewModel: BaseAuthViewModel, ViewModelType {
         let username: Observable<String>
         let password: Observable<String>
         let loginTap: Observable<Void>
-        
+        let registerTap: Observable<Void>
+        let forgotPasswordTap: Observable<Void>
     }
+    
     let method = BehaviorRelay(value: LoginMethod.password)
     let username = BehaviorRelay(value: "")
     let password = BehaviorRelay(value: "")
@@ -105,9 +70,14 @@ class LoginViewModel: BaseAuthViewModel, ViewModelType {
         let showRegister: Driver<Void>
         let showPhoneLogin: Driver<Void>
         //操作结果
-        let loginResult: Driver<Result<User, Error>>
+        let loginResult: Driver<Result<LoginData, AppError>>
         //错误信息
         let errorMessage: Driver<String?>
+        
+        //输入校验错误提示
+        let usernameError: Driver<String?>
+        let passwordError: Driver<String?>
+        
     }
     
     // MARK: - 内部状态
@@ -119,27 +89,87 @@ class LoginViewModel: BaseAuthViewModel, ViewModelType {
     func transform(input: Input) -> Output {
         //处理表单有效性
         let isFormValid = Observable.combineLatest(
-            input.username.map { self.validateEmail($0) },
+            input.username.map { !$0.isEmpty },
             input.password.map { !$0.isEmpty }
         ).map { $0 && $1 }
         
+        // 用户名本地校验
+        let usernameError = input.username
+            .map { username -> String? in
+                let regex = "^[A-Za-z0-9]{5,25}$"
+                let pred = NSPredicate(format: "SELF MATCHES %@", regex)
+                if pred.evaluate(with: username) {
+                    return nil
+                } else if username.isEmpty {
+                    return nil
+                } else {
+                    return "用户名格式不正确"
+                }
+            }
+            .asDriver(onErrorJustReturn: nil)
+
+        // 密码本地校验
+        let passwordError = input.password
+            .map { password -> String? in
+                let regex = "^[A-Za-z0-9@#$%^&+=]{4,25}$"
+                let pred = NSPredicate(format: "SELF MATCHES %@", regex)
+                if pred.evaluate(with: password) {
+                    return nil
+                } else if password.isEmpty {
+                    return nil
+                } else {
+                    return "密码格式不正确"
+                }
+            }
+            .asDriver(onErrorJustReturn: nil)
+
         //处理登录请求
         let loginRequest = input.loginTap
             .withLatestFrom(Observable.combineLatest(input.username, input.password))
-            .flatMapLatest { [weak self] (username, password) -> Observable<Result<User, Error>> in
+            .flatMapLatest { [weak self] (username, password) -> Observable<Result<LoginData, AppError>> in
                 guard let self = self else { return .empty() }
+                // 开始加载
+                self.isLoadingRelay.accept(true)
+                
                 return self.authService.login(username: username, password: password)
                     .asObservable()
-                    .map { loginData -> Result<User, Error> in
-                        let user = User(
-                            userId: loginData.userId, 
-                            username: loginData.username, 
-                            email: loginData.email, 
-                            avatarUrl: loginData.avatarUrl, 
-                            token: loginData.token
-                        )
-                        return .success(user)
+                    .flatMap { baseResponse -> Observable<Result<LoginData, AppError>> in
+                        // 1. 检查业务状态码
+                        if baseResponse.statusCode == 2000, let loginData = baseResponse.data {
+//                            let user = User(
+//                                userId: loginData.userId,
+//                                username: loginData.username,
+//                                email: loginData.email,
+//                                token: loginData.token,
+//                                avatar: loginData.avatarURL
+//                            )
+                            return .just(.success(loginData))
+                        } else {
+                            // 2. 业务错误转换为AppError
+                            let error = AppError.businessError(
+                                code: baseResponse.statusCode,
+                                message: baseResponse.message,
+                                detail: "业务操作失败"
+                                )
+                            return .just(.failure(error))
+                        }
                     }
+                    .catchError { error -> Observable<Result<LoginData, AppError>> in
+                        // 3. 确保所有错误都是AppError类型
+                        if let appError = error as? AppError {
+                            return .just(.failure(appError))
+                        }
+                        return .just(.failure(AppError.networkError.withDetail("\(error)")))
+                    }
+                    .do(
+                        onNext: { [weak self] (_: Result<LoginData, AppError>) in
+                            self?.isLoadingRelay.accept(false)
+                        }, onError: { [weak self] (_: Error)  in
+                            self?.isLoadingRelay.accept(false)
+                        },onDispose: { [weak self] in
+                            self?.isLoadingRelay.accept(false)
+                        }
+                    )
             }
             .share(replay: 1, scope: .whileConnected)
         
@@ -147,10 +177,17 @@ class LoginViewModel: BaseAuthViewModel, ViewModelType {
         let errorMessage = loginRequest
             .map { result -> String? in
                 if case .failure(let error) = result {
-                    return error.localizedDescription
+                    if let appError = error as? AppError {
+                        print("⚠️ [错误详情] \(appError.errorDetail)")
+                        return appError.message
+                    } else {
+                        print("⚠️ [错误详情] \(error.localizedDescription)")
+                        return error.localizedDescription
+                    }
                 }
                 return nil
             }
+            .asDriver(onErrorJustReturn: nil)
         
         return Output(
             isLoginEnabled: isFormValid.asDriver(onErrorJustReturn: false),
@@ -158,8 +195,40 @@ class LoginViewModel: BaseAuthViewModel, ViewModelType {
             showRegister: .empty(),
             showPhoneLogin: .empty(),
             loginResult: loginRequest.asDriver(onErrorDriveWith: .empty()),
-            errorMessage: errorMessage.asDriver(onErrorJustReturn: nil)
+            errorMessage: errorMessage,
+            usernameError: usernameError,
+            passwordError: passwordError
         )
+    }
+    
+    // 自定义错误消息格式化
+    private func prettyErrorMessage(for error: Error) -> String {
+        if let authError = error as? AuthError {
+            switch authError {
+            case .invalidCredentials:
+                return "用户名或密码错误"
+            case .validationFailed(let errors):
+                return errors.values.first?.first ?? "数据验证失败"
+            case .emailAlreadyExists:
+                return "邮箱已被注册"
+            case .networkError:
+                return "网络连接失败，请检查网络"
+            default:
+                return "认证错误: \(error.localizedDescription)"
+            }
+        }
+        
+        if let moyaError = error as? MoyaError {
+            switch moyaError {
+            case .statusCode(let response):
+                return "服务器错误 (\(response.statusCode))"
+            case .underlying(let underlyingError, _):
+                return "网络错误: \(underlyingError.localizedDescription)"
+            default:
+                return "请求错误: \(error.localizedDescription)"
+            }
+        }
+        return error.localizedDescription
     }
     
     // 当前登录方式是否有效

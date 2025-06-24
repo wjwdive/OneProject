@@ -20,19 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: Handle Universal Links here if not opt into Scenes
-        func application(_ application: UIApplication,
-                         continue userActivity: NSUserActivity,
-                         restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-            // Get URL components from the incoming user activity.
-            guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-                let incomingURL = userActivity.webpageURL else {
-                return false
-            }
-
-            let router: AppRouting = AppRouter.shared
-            router.route(to: incomingURL, from: nil, using: .present)
-            return true
+    func application(_ application: UIApplication,
+                        continue userActivity: NSUserActivity,
+                        restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        // Get URL components from the incoming user activity.
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+            let incomingURL = userActivity.webpageURL else {
+            return false
         }
+
+        let router: AppRouting = AppRouter.shared
+        router.route(to: incomingURL, from: nil, using: .present)
+        return true
+    }
 
     // MARK: UISceneSession Lifecycle
 
@@ -60,14 +60,10 @@ private extension AppDelegate {
 //        [FirebaseTrackingProvider()].forEach {
 //            TrackingRepo.shared.register(trackingProvider: $0)
 //        }
+        //注册路由
+        routerRegister()
 
-        // Register routing here
-        let router: AppRouting = AppRouter.shared
-        // swiftlint:disable no_hardcoded_strings
-        router.register(path: "InternalMenu", navigator: InternalMenuNavigator())
-        router.register(path: "DesignKit", navigator: DesignKitDemoNavigator())
-        // swiftlint:enable no_hardcoded_strings
-
+        //持久数据读取
         let togglesDataStore: TogglesDataStoreType = BuildTargetTogglesDataStore.shared
         if togglesDataStore.isToggleOn(BuildTargetToggle.debug) {
             // There is still a bug in the Firebase Console, so the ID won't work until they fix it
@@ -132,3 +128,20 @@ func localNetConfig() {
     allowInsecureLocalhost()
     #endif
 }
+
+func routerRegister() {
+    // Register routing here
+    let router: AppRouting = AppRouter.shared
+    // swiftlint:disable no_hardcoded_strings
+    router.register(path: "InternalMenu", navigator: InternalMenuNavigator())
+    router.register(path: "DesignKit", navigator: DesignKitDemoNavigator())
+    router.register(path: routerPath.LoginView.rawValue, navigator: LoginNavigator())
+    router.register(path: routerPath.RegisterView.rawValue, navigator: RegisterNavigator())
+    router.register(path: routerPath.ForgotPasswordView.rawValue, navigator: ForgotPasswordNavigator())
+    router.register(path: routerPath.RootNavigationController.rawValue, navigator: RootNavNavigator())
+
+    
+    // swiftlint:enable no_hardcoded_strings
+}
+
+

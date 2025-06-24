@@ -122,6 +122,12 @@ class AuthViewModel {
                 guard let self = self else { return .empty() }
                 return self.performLoginRequest {
                     self.authService.login(username: username, password: password)
+                    .map { response in
+                        guard let data = response.data else {
+                            throw AuthError.serverError
+                        }
+                        return data
+                    }
                 }
             }
             .subscribe()

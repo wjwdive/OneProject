@@ -25,4 +25,12 @@ class BaseViewModel {
     func viewDidAppear() {}
     func viewWillDisappear() {}
     func viewDidDisappear() {}
-} 
+}
+
+// viewModel包装成 Input和Output 方便管理, 所有viewModel都继承此基类
+protocol ViewModelType {
+    associatedtype Input
+    associatedtype Output
+    
+    func transform(input: Input) -> Output
+}

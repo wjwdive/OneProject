@@ -50,7 +50,12 @@ struct GetMomentsByUserIDRestful: GetMomentsByUserIDSessionType {
     func getMoments(userID: String) -> Observable<MomentsDetails> {
         let session = Session(userID: userID, togglesDataStore: togglesDataStore)
         return sessionHandler(session).map {
-            $0.data//MomentsDetails 整个数据返回给Repo
+            //$0.data! 不安全//MomentsDetails 整个数据返回给Repo
+            response in
+                guard let data = response.data else {
+                    throw AuthError.serverError // 或自定义“无数据”错误
+                }
+                return data
         }
     }
 }
