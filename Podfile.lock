@@ -148,6 +148,7 @@ PODS:
   - SnapKit (5.0.1)
   - SwiftGen (6.4.0)
   - SwiftLint (0.42.0)
+  - Toast-Swift (5.1.0)
 
 DEPENDENCIES:
   - Alamofire (= 5.3.0)
@@ -171,6 +172,7 @@ DEPENDENCIES:
   - SnapKit (= 5.0.1)
   - SwiftGen (= 6.4.0)
   - SwiftLint (= 0.42.0)
+  - Toast-Swift (= 5.1.0)
 
 SPEC REPOS:
   trunk:
@@ -207,6 +209,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftGen
     - SwiftLint
+    - Toast-Swift
 
 EXTERNAL SOURCES:
   DesignKit:
@@ -247,7 +250,8 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+  Toast-Swift: dd369e68ee529f542c65bd0d0c6c50cd743cf6f2
 
-PODFILE CHECKSUM: 3a4a726a1cfdfa33045ff6be2983a653e164f38d
+PODFILE CHECKSUM: 43da6ae0d227dac9f60ece05a6ddb9c6e2e12ccc
 
 COCOAPODS: 1.15.2

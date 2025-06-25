@@ -164,7 +164,8 @@ class LoginViewModel: BaseAuthViewModel, ViewModelType {
                     .do(
                         onNext: { [weak self] (_: Result<LoginData, AppError>) in
                             self?.isLoadingRelay.accept(false)
-                        }, onError: { [weak self] (_: Error)  in
+                        }, onError: { [weak self] (error: Error)  in
+                            print("error: " + error.localizedDescription)
                             self?.isLoadingRelay.accept(false)
                         },onDispose: { [weak self] in
                             self?.isLoadingRelay.accept(false)

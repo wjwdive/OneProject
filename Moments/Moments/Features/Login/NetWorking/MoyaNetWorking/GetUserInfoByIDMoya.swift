@@ -168,7 +168,7 @@ class AuthService {
             .do(onSuccess: { response in
                 print("=== 网络响应调试 ===")
                 print("状态码: \(response.statusCode)")
-                print("响应数据: \(String(data: response.data, encoding: .utf8) ?? "无法解析")")
+                print("🌏响应数据: \(String(data: response.data, encoding: .utf8) ?? "无法解析")")
                 print("==================")
             }, onError: {error in
                 print("=== 网络错误调试 ===")
@@ -176,9 +176,9 @@ class AuthService {
                 if let moyaError = error as? MoyaError {
                     switch moyaError {
                     case .statusCode(let response):
-                        print("HTTP错误: \(response.statusCode)")
+                        print("🌏HTTP错误: \(response.statusCode)")
                     case .underlying(let underlyingError, _):
-                        print("底层错误: \(underlyingError)")
+                        print("🌏底层错误: \(underlyingError)")
                     default:
                         print("其他 MoyaError 类型: \(moyaError)")
                     }

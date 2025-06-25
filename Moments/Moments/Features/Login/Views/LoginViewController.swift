@@ -196,7 +196,9 @@ class LoginViewController: UIViewController {
                     UIApplication.shared.windows.first?.rootViewController = baseNav
                     UIApplication.shared.windows.first?.makeKeyAndVisible()
                 case .failure(let error):
-                    self?.showAlert(message: error.localizedDescription)
+                    let errorMessage = "🖥views层Log：tatusCode:\(error.code),message:\(error.message)"
+                    print(errorMessage)
+                    self?.showAlert(message: error.message)
                 }
             })
             .disposed(by: disposeBag)

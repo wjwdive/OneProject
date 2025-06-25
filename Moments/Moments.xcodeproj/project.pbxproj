@@ -281,6 +281,9 @@
 		6F9DBFEA2E0B0BBC007EC26E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9DBFE92E0B0BBC007EC26E /* AppError.swift */; };
 		6F9DBFEB2E0B0BBC007EC26E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9DBFE92E0B0BBC007EC26E /* AppError.swift */; };
 		6F9DBFEC2E0B0BBC007EC26E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9DBFE92E0B0BBC007EC26E /* AppError.swift */; };
+		6F9DBFEE2E0BFC41007EC26E /* Moments.entitalments in Resources */ = {isa = PBXBuildFile; fileRef = 6F9DBFED2E0BFC41007EC26E /* Moments.entitalments */; };
+		6F9DBFEF2E0BFC41007EC26E /* Moments.entitalments in Resources */ = {isa = PBXBuildFile; fileRef = 6F9DBFED2E0BFC41007EC26E /* Moments.entitalments */; };
+		6F9DBFF02E0BFC41007EC26E /* Moments.entitalments in Resources */ = {isa = PBXBuildFile; fileRef = 6F9DBFED2E0BFC41007EC26E /* Moments.entitalments */; };
 		6FBE223F2DDCA27000ACFB72 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE223E2DDCA27000ACFB72 /* Launch Screen.storyboard */; };
 		6FBE22432DDCA2A600ACFB72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE22422DDCA2A600ACFB72 /* Main.storyboard */; };
 		6FBE22442DDCA2A600ACFB72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE22422DDCA2A600ACFB72 /* Main.storyboard */; };
@@ -486,6 +489,7 @@
 		6F9198F12DE959F20014424E /* PhotoGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoGridView.swift; path = Moments/Features/Moments/Views/PhotoGridView.swift; sourceTree = SOURCE_ROOT; };
 		6F9DBFE52E0AAE11007EC26E /* RootNavNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavNavigator.swift; sourceTree = "<group>"; };
 		6F9DBFE92E0B0BBC007EC26E /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		6F9DBFED2E0BFC41007EC26E /* Moments.entitalments */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Moments.entitalments; sourceTree = "<group>"; };
 		6FBE223E2DDCA27000ACFB72 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		6FBE22422DDCA2A600ACFB72 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6FDEAEE52E02867D00901533 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -719,6 +723,7 @@
 				6FBE223E2DDCA27000ACFB72 /* Launch Screen.storyboard */,
 				6F2BC3262BC3AE7200B3E078 /* Assets.xcassets */,
 				6F2BC32B2BC3AE7200B3E078 /* Info.plist */,
+				6F9DBFED2E0BFC41007EC26E /* Moments.entitalments */,
 				6F4045342DDF948E00159B14 /* RoutingSource.swift */,
 			);
 			path = Moments;
@@ -1377,6 +1382,7 @@
 				6F4046062DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist in Resources */,
 				6FBE223F2DDCA27000ACFB72 /* Launch Screen.storyboard in Resources */,
 				6FBE22432DDCA2A600ACFB72 /* Main.storyboard in Resources */,
+				6F9DBFEE2E0BFC41007EC26E /* Moments.entitalments in Resources */,
 				6F6AEEE32DDC89310008EA8D /* InternalProject.xcconfig in Resources */,
 				6F6AEEEB2DDC89960008EA8D /* AppStoreProject.xcconfig in Resources */,
 				6F6AEEEF2DDC89AE0008EA8D /* AppStoreTarget.xcconfig in Resources */,
@@ -1405,6 +1411,7 @@
 				6F6AEECB2DDC88570008EA8D /* SDKAndDeviceSupport.xcconfig in Resources */,
 				6F4046072DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist in Resources */,
 				6F6AEED92DDC88DE0008EA8D /* DebugProject.xcconfig in Resources */,
+				6F9DBFEF2E0BFC41007EC26E /* Moments.entitalments in Resources */,
 				6F6AEED12DDC88670008EA8D /* BaseProject.xcconfig in Resources */,
 				6F6AEECE2DDC88600008EA8D /* CompilerAndLanguage.xcconfig in Resources */,
 			);
@@ -1427,6 +1434,7 @@
 				6F6AEECC2DDC88570008EA8D /* SDKAndDeviceSupport.xcconfig in Resources */,
 				6F4046082DE762B600159B14 /* FirebaseRemoteConfigDefaults.plist in Resources */,
 				6F6AEEDA2DDC88DE0008EA8D /* DebugProject.xcconfig in Resources */,
+				6F9DBFF02E0BFC41007EC26E /* Moments.entitalments in Resources */,
 				6F6AEED22DDC88670008EA8D /* BaseProject.xcconfig in Resources */,
 				6F6AEECF2DDC88610008EA8D /* CompilerAndLanguage.xcconfig in Resources */,
 			);
@@ -2024,9 +2032,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LHK6PK48JE;
+				DEVELOPMENT_TEAM = JS6ZU2DT38;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2040,8 +2049,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wjw.Moments;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wjwdive.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2054,9 +2064,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LHK6PK48JE;
+				DEVELOPMENT_TEAM = JS6ZU2DT38;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2070,8 +2081,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wjw.Moments;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wjwdive.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2244,9 +2256,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LHK6PK48JE;
+				DEVELOPMENT_TEAM = JS6ZU2DT38;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2260,8 +2273,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wjw.Moments;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wjwdive.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
