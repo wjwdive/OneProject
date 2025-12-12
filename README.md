@@ -48,5 +48,5 @@ iOS project engineering , components in swift
     朋友圈图片支持多张图片（1-9张），目前还有个小BUG,两张图片时多处空白行
     
     效果图：
-<img src="https://github.com/user-attachments/assets/2f922d8e-de5e-468a-8adc-f6d4b27f6885" alt="效果图" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
+<img src="https://github.com/user-attachments/assets/2f922d8e-de5e-468a-8adc-f6d4b27f6885" alt="效果图" style="width: 25%; height: auto; display: inline-block; margin: 5px;" />
 
